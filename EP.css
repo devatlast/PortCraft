@@ -1,5 +1,5 @@
 body {
-    background-color: lemonchiffon;
+    background-color: whitesmoke;
     margin: 0;
     padding: 20px;
     min-height: 100vh;
@@ -18,7 +18,7 @@ body {
     text-align: center;
     margin: auto;
     padding: 30px;
-    background-color: #f5f5f5;
+    background-color: #778899;
     box-shadow: 0 10px 30px rgba(0,0,0,0.2);
     width: 90%;
     max-width: 500px;
@@ -65,7 +65,7 @@ body {
 #intro {
     margin-top: 20px;
     margin-bottom: 20px;
-    color: brown;
+    color: whitesmoke;
     font-family: cursive;
     font-size: 35px;
 }
@@ -93,5 +93,4 @@ footer {
     color: #a52a2a;
     font-weight: 500;
     bottom: 20px;
-    
 }
