@@ -15,19 +15,43 @@
     
     <nav>
         <div class="link-container">
-            <button id="toggle" aria-label="Change to dark mode" class="nav-link">&#127769</button>
+        <div id="mode-display"><button id="toggle" aria-label="Change to dark mode" class="nav-link">Dark mode</button></div>
         </ul>
         <ul>
             <li><a href="index.html" class="nav-link">Home</a></li>
             <li><a href="#how" class="nav-link">How it works</a></li>
             <li><a href="#gallery" class="nav-link">Gallery</a></li>
-            <li><a href="https://github.com/Umpire33-dot" target="_blank" class="nav-link">Github</a></li>
+            <li><a href="https://github.com/Umpire33-dot" target="_blank" class="nav-link">creator Git</a></li>
         </div>
     </nav>
     </header>
+    <section id="persuasion-section">
+        <div class="text-box">
+        <h1 id="main-text">Your <em>professional</em> identity deserves a digital home that work as hard
+        as you do.</h1>
+        </div>
+        <div class="ctrl-panel">
+        <button id="click-me">Next</button>
+
+        <div id="choices" class="hidden">
+            <button id="yes-btn">Yes</button>
+            <button id="no-btn">No</button>
+        </div>
+        </div>
+    </section>
+
+    <section id="editor" class="hidden">
+        <button id="finished-btn">Finished? Go to game.</button>
+    </section>
+
+<section id="workshop" class="hidden">
+    <h1 id="hello">Port Workshop</h1>
+    <button id="reset-btn">Reset</button>
+    <div id="workshop-container"></div>
+</section>
 
 
-    <section id="rps-game">
+    <section id="rps-game" class="hidden">
         <h1 id="intro">Rock-Paper-Scissors.</h1>
         <div id="arsenal">
         <p>Choose Your Weapon!</p>
@@ -40,27 +64,6 @@
             <p id="round-result">Choose your weapon to begin!</p>
             <p id="score-board">Computer: <span id="computer-score">0</span> | Player: <span id="player-score">0</span></p>
         </div>
-
-    </section>
-
-
-    <section id="persuassion" class="hidden">
-        <div id="container">
-            <section id="phase-1">
-                <button id="click-1">Click for more</button>
-            </section>
-
-            <section id="phase-2">
-                <h1>Are you the Imposter?!</h1>
-                <button id="no-btn">No</button>
-                <button id="yes-btn">Yes</button>
-            </section>
-
-            <section id="phase-3">
-                <h1>Imposter Found: Draw a heart to prove you're human <span>&#10084</span></h1>
-            </section>
-        </div>
-    </section>
 
 
 

@@ -48,6 +48,92 @@ header {
     margin-bottom: 50px;
 }
 
+/*persuasion page*/
+
+#persuasion-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 80vh;
+    text-align: center;
+}
+.text-box {
+    max-width: 600px;
+    padding: 50px;
+    max-width: 650px;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.3);
+    transition: all 0.5s ease;
+    background: rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    margin-bottom: 20px;
+    border-radius: 15px;
+}
+
+@keyframes pulse-grow {
+    0% {transform: scale(1); }
+    50% {transform: scale(1.02);}
+    100% {transform: scale(1);}
+}
+.text-box-pulse {
+    animation: pulse-grow 0.4s ease-out;
+}
+#main-text {
+    font-size: 1.8rem;
+    color: #a52;
+    font-family: cursive;
+    text-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
+    line-height: 1.4;
+}
+
+.ctrl-panel {
+    min-height: 60px;
+}
+
+#click-me,#yes-btn,#no-btn{
+    padding: 15px 30px;
+    font-size: 1.1rem;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: none;
+    margin: 10px;
+    font-weight: bold;
+}
+
+#click-me {
+    background-color: #4a90e2;
+    color: antiquewhite;
+}
+#yes-btn {
+    background-color: #2ecc71;
+    color: whitesmoke;
+    transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+#no-btn {
+    background-color: #e74c3c;
+    color: whitesmoke;
+}
+#click-me:hover, #yes-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+#choices {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+}
+#click-me, #choices {
+    margin-top: 30px;
+
+}
+
+
+
+/*Rps game*/
+
 .icon {
     justify-content: space-between;
 }
@@ -108,9 +194,6 @@ nav ul {
     color: var(--text-color);
 }
 
-.hidden {
-    display: none;
-}
 
 #rps-game {
     margin-top: 50px;
@@ -227,4 +310,13 @@ footer {
 [data-theme='dark'] .footer-content {
     background-color: rgba(255, 255, 255, 0.5);
     border-color: rgba(255, 255, 255, 0.1);
+}
+
+
+
+
+
+
+.hidden {
+    display: none !important;
 }
