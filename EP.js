@@ -60,3 +60,27 @@ buttons.forEach(btn =>{
     const result = matchRound(playerChoice, computerChoice);
       });
 });
+
+
+//event listener for dark mode button
+const toggleBtn = document.getElementById('toggle');
+const currentTheme = localStorage.getItem('theme');
+
+if (currentTheme) {
+    document.documentElement.setAttribute('data-theme', currentTheme);
+    toggleBtn.textContent = currentTheme === 'dark' ? '&#127769' : '&#9728';
+}
+
+toggleBtn.addEventListener('click', () => {
+    let theme = document.documentElement.getAttribute('data-theme');
+    
+    if (theme=== 'dark') {
+        document.documentElement.setAttribute('data-theme', 'light');
+        localStorage.setItem('theme', 'light');
+        toggleBtn.innerHTML = '&#127769';
+    } else {
+        document.documentElement.setAttribute('data-theme', 'dark');
+        localStorage.setItem('theme', 'dark');
+        toggleBtn.innerHTML = '&#9728';
+    }
+});

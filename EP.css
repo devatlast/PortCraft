@@ -1,12 +1,111 @@
+
+
+:root {
+    --bg-color: whitesmoke;
+    --text-color: #000;
+    --accent: #00ff6347;
+    --font-main: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+[data-theme = 'dark'] {
+    --bg-color: #000;
+    --text-color: #ffffff;
+    --accent: #ff00ea;
+
+}
+
+#toggle {
+    display: flex;
+    align-items: center;
+    order: -1;
+}
+
 body {
-    background-color: whitesmoke;
+    background-color: var(--bg-color);
     margin: 0;
     padding: 20px;
     min-height: 100vh;
+    color: var(--text-color);
     align-items: center;
     display: flex;
     flex-direction: column;
+    align-items: center;
+    font-family: var(--font-main);
+    transition: background-color 0.3s ease;
     justify-content: space-between;
+}
+
+header {
+    color: #000;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 2px solid rgba(0,0,0,0.1);
+    box-sizing: border-box;
+    margin-bottom: 50px;
+}
+
+.icon {
+    justify-content: space-between;
+}
+.nav-link {
+    text-decoration: none;
+    color: var[--text-color];
+    font-size: 1rem;
+    transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+    color: var(--accent-color);
+
+}
+
+
+.logo h1 {
+    color: #a52;
+    margin: 0;
+    font-family: cursive;
+    font-size: 2.5rem;
+}
+
+.link-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+}
+
+.logo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin: 10px;
+}
+
+nav ul li {
+    margin: 2px 0;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.tagline {
+    margin: 0;
+    font-size: 0.9rem;
+    font-family: inherit;
+    opacity: 0.8;
+    color: var(--text-color);
 }
 
 .hidden {
@@ -14,6 +113,7 @@ body {
 }
 
 #rps-game {
+    margin-top: 50px;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     text-align: center;
     margin: auto;
@@ -82,15 +182,49 @@ body {
 }
 
 footer {
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    text-align: center;
-    margin-top: 20px;
-    padding: 30px;
-    background-color: #ffebcd;
+    display: flex;
+    justify-content: center;
+    padding: 40px 20px;
+    border-top: 1px solid rgba(0,0,0,0.1);
+    margin-top: 50px;
+}
+
+.footer-content p {
+    background-color: rgba(0,0,0,0.5);
+    border: 1px solid rgba(0,0,0,0.1);
     border-radius: 15px;
+    padding: 30px;
+    width: 100%;
     max-width: 500px;
-    width: 90%;
-    color: #a52a2a;
-    font-weight: 500;
-    bottom: 20px;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+    background-color: rgba(255, 255, 255, 0.5);
+    border-color: rgba(255, 255, 255, 0.1);
+}
+
+.footer-content p {
+    line-height: 1.6;
+    color: var(--text-color);
+    font-size: 0.95rem;
+}
+
+
+.right {
+    margin-top: 20px;
+    font-size: 0.8rem;
+    opacity: 0.7;
+}
+
+.footer-title {
+    color: #a52;
+    font-family: cursive, sans-serif;
+    font-size: 1.8rem;
+    margin-top: 0;
+    text-align: center;
+    width: 100%;
+}
+
+[data-theme='dark'] .footer-content {
+    background-color: rgba(255, 255, 255, 0.5);
+    border-color: rgba(255, 255, 255, 0.1);
 }

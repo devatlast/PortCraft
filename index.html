@@ -3,10 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ola's Escape-Room</title>
+    <title>PortCraft</title>
     <link rel="stylesheet" href="EP.css">
 </head>
 <body>
+    <header id="top">
+    <div class="logo">
+        <h1>PortCraft</h1>
+        <p class="tagline">Your professional journey starts here!</p>
+    </div>
+    
+    <nav>
+        <div class="link-container">
+            <button id="toggle" aria-label="Change to dark mode" class="nav-link">&#127769</button>
+        </ul>
+        <ul>
+            <li><a href="index.html" class="nav-link">Home</a></li>
+            <li><a href="#how" class="nav-link">How it works</a></li>
+            <li><a href="#gallery" class="nav-link">Gallery</a></li>
+            <li><a href="https://github.com/Umpire33-dot" target="_blank" class="nav-link">Github</a></li>
+        </div>
+    </nav>
+    </header>
+
+
     <section id="rps-game">
         <h1 id="intro">Rock-Paper-Scissors.</h1>
         <div id="arsenal">
@@ -49,13 +69,14 @@
 
 
     <footer>
-        <p id="note">
-Welcome! This is a challenge-based experience where code drives the story. 
-You’ll need to beat the computer at Rock Paper Scissors to unlock what’s next a
- mix of game logic, UI experiments, and a digital canvas. 
-I hope to build more interactive 'escape rooms' like this in the future! 
-<p><strong><em>Can you make it to the end? Good luck</em></strong></p></p>
-<p id="right">&copy; 2026 Ola's Escape Room. All rights reserved.</p>
+        <div class="footer-content">
+            <h3 class="footer-title">About PortCraft</h3>
+        <p>PortCraft is a multi-stage web application designed to demonstrate the power of interactive UI. 
+            It challenges users with a classic game of Rock Paper Scissors to unlock a hidden "persuasive" interface, eventually 
+            revealing a high-performance Etch A Sketch style grid that functions as a professional portfolio builder.
+<p><strong><em>let's see if you can make it to the end. Good luck!</em></strong></p></p>
+<p class="right">&copy; 2026 Ola's Escape Room. All rights reserved.</p>
+        </div>
 <script src="EP.js"></script>
     </footer>
 
