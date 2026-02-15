@@ -36,7 +36,8 @@ body {
 }
 
 header {
-    color: #000;
+    /* FIX: Changed from hardcoded #000 to var(--text-color) to support dark mode */
+    color: var(--text-color);
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -47,6 +48,11 @@ header {
     box-sizing: border-box;
     margin-bottom: 50px;
 }
+
+
+
+
+
 
 /*persuasion page*/
 
@@ -80,6 +86,7 @@ header {
 .text-box-pulse {
     animation: pulse-grow 0.4s ease-out;
 }
+
 #main-text {
     font-size: 1.8rem;
     color: #a52;
@@ -129,6 +136,9 @@ header {
     margin-top: 30px;
 
 }
+/*End of persuasion
+
+
 
 
 
@@ -267,33 +277,41 @@ nav ul {
 footer {
     display: flex;
     justify-content: center;
+    align-items: center;
+    width: 100%;
     padding: 40px 20px;
     border-top: 1px solid rgba(0,0,0,0.1);
     margin-top: 50px;
+    box-sizing: border-box;
 }
 
-.footer-content p {
-    background-color: rgba(0,0,0,0.5);
-    border: 1px solid rgba(0,0,0,0.1);
+/* BUG FIX: Move background styling from individual paragraphs to footer-content container
+   ISSUE: Each <p> had its own background/border, creating misaligned boxes
+   SOLUTION: Apply one unified background to .footer-content, remove individual paragraph backgrounds */
+.footer-content {
+    background-color: rgba(255, 255, 255, 0.5);
+    border: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: 15px;
     padding: 30px;
-    width: 100%;
     max-width: 500px;
+    width: 100%;
     text-align: center;
     box-shadow: 0 4px 15px rgba(0,0,0,0.5);
-    background-color: rgba(255, 255, 255, 0.5);
-    border-color: rgba(255, 255, 255, 0.1);
+    box-sizing: border-box;
 }
 
 .footer-content p {
     line-height: 1.6;
     color: var(--text-color);
     font-size: 0.95rem;
+    margin: 10px 0;
 }
 
 
 .right {
-    margin-top: 20px;
+    /* BUG FIX: Remove margin-top from .right class (was conflicting and creating spacing)
+       ISSUE: Individual margins on paragraphs broke alignment
+       SOLUTION: Use margin on .footer-content p instead for consistent spacing */
     font-size: 0.8rem;
     opacity: 0.7;
 }

@@ -18,13 +18,13 @@
         <div id="mode-display"><button id="toggle" aria-label="Change to dark mode" class="nav-link">Dark mode</button></div>
         </ul>
         <ul>
-            <li><a href="index.html" class="nav-link">Home</a></li>
-            <li><a href="#how" class="nav-link">How it works</a></li>
-            <li><a href="#gallery" class="nav-link">Gallery</a></li>
-            <li><a href="https://github.com/Umpire33-dot" target="_blank" class="nav-link">creator Git</a></li>
-        </div>
+            <li><a href="#about" id="about-link" class="nav-link">About</a></li>
+            <li><a href="#home" id="back-to-home" class="nav-link hidden">Back to Home</a></li>
+        </ul>
     </nav>
     </header>
+
+    <!--persuasive contents skeleton starts here-->
     <section id="persuasion-section">
         <div class="text-box">
         <h1 id="main-text">Your <em>professional</em> identity deserves a digital home that work as hard
@@ -40,17 +40,52 @@
         </div>
     </section>
 
-    <section id="editor" class="hidden">
-        <button id="finished-btn">Finished? Go to game.</button>
+    </section>
+<!--Ends Here-->
+
+
+<!--PortCraft workshop skeleton starts here-->
+<section id="workshop" class="hidden">
+    <section id="workshop-intro">
+    <header>
+        <h1><em>Your digital identity starts  here!</em></h1>
+    </header>
+    <article>
+        <p>
+            In a world driven by first impressions, Our portfolio is our first handshake.
+            Don't settle for templates, create something that reflects your unique skills.
+        </p>
+        <button id="start-btn">Enter Workshop</button>
+    </article>
     </section>
 
-<section id="workshop" class="hidden">
-    <h1 id="hello">Port Workshop</h1>
-    <button id="reset-btn">Reset</button>
-    <div id="workshop-container"></div>
+    <hr>
+
+    <section id="editor-page">
+        <h2>Portfolio Workspace</h2>
+        <div id="portfolio-editor" contenteditable="true">
+            <h3>[Click to Edit name]</h3>
+            <p>Type your professional bio or project description here.....</p>
+        </div>
+
+        <h3>Signature Pad(Etch-a-Sketch)</h3>
+        <canvas id="etch-a-sketch-pad" width="400" height="200" style="border:1px solid #000;"></canvas>
+
+        <div class="editor-controls">
+            <button id="clear-sketch">Click to erase</button>
+            <button id="download-port">Download Portfolio</button>
+            <button id="download-sign">Download Signature</button>
+            <button id="port-rps">Done? Let's play</button>
+        </div>
+    </section>
 </section>
 
+<!--Workshop skeleton Ends Here-->
 
+
+
+
+<!--Rps skeleton starts here-->
     <section id="rps-game" class="hidden">
         <h1 id="intro">Rock-Paper-Scissors.</h1>
         <div id="arsenal">
@@ -65,23 +100,18 @@
             <p id="score-board">Computer: <span id="computer-score">0</span> | Player: <span id="player-score">0</span></p>
         </div>
 
-
-
-
-
-
-
     <footer>
         <div class="footer-content">
             <h3 class="footer-title">About PortCraft</h3>
-        <p>PortCraft is a multi-stage web application designed to demonstrate the power of interactive UI. 
-            It challenges users with a classic game of Rock Paper Scissors to unlock a hidden "persuasive" interface, eventually 
-            revealing a high-performance Etch A Sketch style grid that functions as a professional portfolio builder.
-<p><strong><em>let's see if you can make it to the end. Good luck!</em></strong></p></p>
+        <p>PortCraft is an innovative interactive web application that transforms how professionals build their digital presence. It combines a persuasive user journey with a professional portfolio builder featuring a personalized signature sketch pad. The strategic Rock-Paper-Scissors game mechanic gamifies the experience, encouraging users to actively commit to creating a polished, personalized portfolio that authentically represents their unique skills and professional identity.</p>
 <p class="right">&copy; 2026 Ola's Escape Room. All rights reserved.</p>
         </div>
 <script src="EP.js"></script>
     </footer>
+<!--Rps skeleton ends here!-->
+
+
+
 
 
 </body>
