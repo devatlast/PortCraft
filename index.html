@@ -46,38 +46,97 @@
 
 <!--PortCraft workshop skeleton starts here-->
 <section id="workshop" class="hidden">
-    <section id="workshop-intro">
-    <header>
-        <h1><em>Your digital identity starts  here!</em></h1>
-    </header>
-    <article>
-        <p>
-            In a world driven by first impressions, Our portfolio is our first handshake.
-            Don't settle for templates, create something that reflects your unique skills.
-        </p>
-        <button id="start-btn">Enter Workshop</button>
-    </article>
-    </section>
+    <div class="theme-toolbar">
+        <select id="theme-select">
+            <option value="modern">Modern professional</option>
+            <option value="executive">Executive Corporate</option>
+            <option value="creative">Creative Bold</option>
+        </select>
 
-    <hr>
+        <div id="master-buttons">
+        <button id="preview-btn">👁️Preview</button>
+        <button id="cloud-save">☁️Sync to Cloud</button>
+        <button id="pro-download-btn">📥Download PDF</button>
+    </div>
+    </div>
 
-    <section id="editor-page">
-        <h2>Portfolio Workspace</h2>
-        <div id="portfolio-editor" contenteditable="true">
-            <h3>[Click to Edit name]</h3>
-            <p>Type your professional bio or project description here.....</p>
-        </div>
+    <div class="cv-box" id="print-area">
+        <aside class="cv-sidebar">
+            <div class="profile-upload">
+                <img id="output-image" src="https://via.placeholder.com/150" class="profile-circle">
+                <input type="file" id="image-input" class="no-print">
+            </div>
 
-        <h3>Signature Pad(Etch-a-Sketch)</h3>
-        <canvas id="etch-a-sketch-pad" width="400" height="200" style="border:1px solid #000;"></canvas>
+            <h1 contenteditable="true" id="user-name">Your Name</h1>
+            <p contenteditable="true" id="user-role">Role</p>
+            <div class="cv-sidebar-secion">
+                <h3>Contact</h3>
+                <p contenteditable="true" >📞 +1 234 567 890</p>
+                <p contenteditable="true">📩 email@example.com</p>
+            </div>
 
-        <div class="editor-controls">
-            <button id="clear-sketch">Click to erase</button>
-            <button id="download-port">Download Portfolio</button>
-            <button id="download-sign">Download Signature</button>
-            <button id="port-rps">Done? Let's play</button>
-        </div>
-    </section>
+            <div class="cv cv-sidebar-secion">
+                <h3>Skills</h3>
+                <ul contenteditable="true" id="skills-list">
+                    <li>Javascript /HTML / CSS</li>
+                    <li>Supabase Integration</li>
+                </ul>
+            </div>
+        </aside>
+
+    <main class="cv-main-content">
+
+        <section class="cv-block">
+            <h2>Work Experience</h2>
+
+            <div contenteditable="true" class="exp-info">
+                <strong>Junior developer</strong> | Tech Corp <br> . Lead the transition from locaStroage to cloud datbase
+            </div>
+            <div>
+                <button id="add-exp">+Add Experience</button>
+            </div>
+        </section>
+
+        <section class="invoice-style">
+            <h2>Professional Invoice</h2>
+            <div class="invoice-data">
+                <p>Date: <span contenteditable="true">Feb 24, 2026</span></p>
+                <p>Inv #: <span contenteditable="true">001</span></p>
+            </div>
+
+            <table id="invoice-table">
+                <thread>
+                    <tr>
+                    <th>Description</th>
+                    <th>Qty</th>
+                    <th>Rate</th>
+                    <th>Total</th>
+                    </tr>
+                </thread>
+            <tbody id="invoice-body"></tbody>
+            </table>
+            
+            <button id="add-rrow" class="no-print">+Add Line Item</button>
+            <div class="invoice-total">
+                <p>Subtotal: <span id="subtotal">$0.00</span></p>
+                <p>Tax: <span id="tax">$0.00</span></p>
+                <hr>
+                <strong> Grand Total: <span id="grand-total">$0.00</span></strong>
+            </div>
+        </section>
+
+        <section class="signature-area">
+            <h3>Authorized Signature</h3>
+            <canvas id="etch-pad" width="300" height="120"></canvas>
+            <div class="sig-control">
+                <button id="clear-sig">Erase</button>
+                <button id="go-to-game">Done? Let's play RPS</button>
+            </div>
+        </section>
+
+        
+    </main>
+    </div>
 </section>
 
 <!--Workshop skeleton Ends Here-->
@@ -106,7 +165,18 @@
         <p>PortCraft is an innovative interactive web application that transforms how professionals build their digital presence. It combines a persuasive user journey with a professional portfolio builder featuring a personalized signature sketch pad. The strategic Rock-Paper-Scissors game mechanic gamifies the experience, encouraging users to actively commit to creating a polished, personalized portfolio that authentically represents their unique skills and professional identity.</p>
 <p class="right">&copy; 2026 Ola's Escape Room. All rights reserved.</p>
         </div>
-<script src="EP.js"></script>
+<script src="EP.j<section id="workshop-intro">
+    <header>
+        <h1><em>Your digital identity starts  here!</em></h1>
+    </header>
+    <article>
+        <p>
+            In a world driven by first impressions, Our portfolio is our first handshake.
+            Don't settle for templates, create something that reflects your unique skills.
+        </p>
+        <button id="start-btn">Enter Workshop</button>
+    </article>
+    </section>s"></script>
     </footer>
 <!--Rps skeleton ends here!-->
 
