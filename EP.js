@@ -1,6 +1,6 @@
-// EP.js — cleaned and reorganized
-// - All workshop/portfolio logic removed per request
-// - Sections: Landing (persuasion), Dark Mode, RPS (game), Navigation
+
+
+
 
 /* ==========================
    Landing / Persuasion
@@ -8,7 +8,7 @@
 let clickCount = 0;
 const messages = [
   "Your professional identity deserves a digital home that works as hard as you do.",
-  "Stop losing precious billable hours to manual paperworkand disorganized layouts",
+  "Stop losing precious billable hours to manual paperwork and disorganized layouts",
   "Secure your business revenue with professional invoices that guarantees payment.",
   "Impress every potential client with a sleek, polished showcase of your skills.",
   "Take control of your full career growth by unlocking these essential tools."
@@ -62,15 +62,31 @@ if (noBtn) {
   });
 }
 
+document.addEventListener('DOMContentLoaded', () =>{
+    const yseBtn = document.getElementById('yes-btn');
+    console.log('YesBtn found?', !!yesBtn);
 if (yesBtn) {
-  yesBtn.addEventListener('click', () => {
-    const ps = document.getElementById('persuasion-section'); if (ps) ps.classList.add('hidden');
-    if (modeDisplayEl) modeDisplayEl.classList.remove('hidden');
-    if (backToHomeEl) backToHomeEl.classList.remove('hidden');
-    console.log('User chose YES — persuasion hidden');
+  yesBtn.addEventListener('click', (e) => {
+    e.preventDefault();
+    console.log('Click fired!')
+    const ps = document.getElementById('persuasion-section');
+    if (ps) {
+        ps.style.transition = 'opacity 0.4s ease';
+        ps.style.opacity = '0';
+        ps.style.visibility = 'hidden';
+        document.body.style.display = 'none';
+        console.log('Fade applied-opacity now:........', ps.style.opacity)
+    }else {
+    console.log('User chose YES —> redirecting to auth/login');
+    } 
+    setTimeout( () =>{
+      console.log('Redirecting now!...')
+      window.location.href = 'http://127.0.0.1:5500/login.html'
+          window.location,href= 'login.html';
+        }, 400);
   });
 }
-
+});
 
 /* ==========================
    Dark Mode
@@ -109,7 +125,7 @@ function getComputerChoice() {
 }
 
 function evaluateRound(playerChoice, computerChoice) {
-  if (playerChoice === computerChoice) return 'tie';
+  if (playerChoice === computerChoice) return 'its a tie';
   if (
     (playerChoice === 'rock' && computerChoice === 'scissors') ||
     (playerChoice === 'scissors' && computerChoice === 'paper') ||
