@@ -1,4 +1,5 @@
 
+
 //Hashed password
 export async function hashpassword(pwd) {
     if (typeof pwd !== 'string') {
@@ -79,3 +80,4 @@ export async function loginUser(username, password) {
     localStorage.setItem('PortBox_currentUser', JSON.stringify(user));
     return user;
 }
+

@@ -6,98 +6,146 @@
     <title>PortCraft Workshop</title>
 </head>
 <body>
-    <section id="workshop">
-    <div class="theme-toolbar">
+    <header>
         <select id="theme-select">
-            <option value="modern">Modern professional</option>
-            <option value="executive">Executive Corporate</option>
-            <option value="creative">Creative Bold</option>
+            <option value="default">Default (light Professional)</option>
+            <option value="dark-mode">Dark Mode</option>
+            <option value="vibrant">Vibrant</option>
+            <option value="minimalist">Minimalist</option>
         </select>
+    </header>
+    <button id="open-ai-chat" >AI</button>
+    
+    
+    <div style="margin-top: 60px">
 
-        <div id="master-buttons">
-        <button id="preview-btn">👁️Preview</button>
-        <button id="cloud-save">☁️Sync to Cloud</button>
-        <button id="pro-download-btn">📥Download PDF</button>
+        <div class="section">
+            <div id="profile-img" contenteditable="true"></div>
+            <h1 id="name" class="hidden" contenteditable="true">My Name</h1>
+            <h2 id="job-title" contenteditable="true">Job-title</h2>
+            <div id="Contact">Contact details</div>
+            <ul>
+                <li contenteditable="true">Phone: +123456789</li>
+                <li contenteditable="true">Email: example@gmail.com</li>
+                <li contenteditable="true">Address: #1, PortCity</li>
+            </ul>
+             
+            <h2 class="section">Skills</h2>
+            <ul contenteditable="true">
+                <li>Database management</li>
+                <li>Unix</li>
+                <li>Python</li>
+                <li>C++</li>
+                <li>Java</li>
+            </ul>
+
+         <h2 id="languages" class="section">Languages</h2>
+         <ul contenteditable="true">
+            <li>English</li>
+            <li>French</li>
+            <li>German</li>
+         </ul>
+        </div> 
+
+        <div id="user-date" class="section">
+            <p contenteditable="true">I'm a software engineer with experience in variety of programming language.....</p>
+            <h2 id="work">Work Experience</h2>
+            <p contenteditable="true">Software developer - Jan 2020 - Dec 2024</p>
+            <p contenteditable="true">Company</p>
+            <ul contenteditable="true">
+                <li>I developed and maintained web applications using languages such as, Html, CSS, Javascript and PHP</li>
+                <li>Worked with cross-functional teams to gather requirements and design user interfaces.</li>
+            </ul>
+
+            <h2>Education</h2>
+            <h3 contenteditable="true">Bsc. Cybersecurity 2020 - 2024</h3>    
+            <p contenteditable="true">Location</p>
+            <h3 contenteditable="true">Masters in Political science</h3>
+            <p contenteditable="true">Location</p>
+            <h3 contenteditable="true">Phd in Chemistry 2010 - 2015</h3>
+            <p contenteditable="true">Location</p>
+        </div>
     </div>
-    </div>
 
-    <div class="cv-box" id="print-area">
-        <aside class="cv-sidebar">
-            <div class="profile-upload">
-                <img id="output-image" src="https://via.placeholder.com/150" class="profile-circle">
-                <input type="file" id="image-input" class="no-print">
+        <div class="section">
+                <h3>Your Signature Here</h3>
+                <canvas id="signature-canvas" width="400" height="200"></canvas>
+                <button id="clear-canvas">Clear</button>
+                <button id="apply-signature">Apply Signature</button> 
+                <img id="sig-img" style="display: none;" alt="Signature">
+            </div>
+            <button id="export-btn">Export to pdf</button>
+        </div>
+
+
+        <div id="ai-modal" class="section">
+            <div id="ai-chat-header">
+                Port Ai
+                <span id="ai-close-btn">&times;</span>
+            </div>
+            <div id="ai-chat-history">
+                <div id="ai-message">Hey there! how can i help you today?</div>
+            </div>
+            <div id="chat-input">
+                <input type="text" id="ai-chat-input" placeholder="Ask for tips to make your portfolio stand out.......">
+                <button id="ai-send-btn">SEND</button>
+                <div id="msg-loader">AI thinking.......</div>
+                <button id="close-chat">CLOSE</button>
             </div>
 
-            <h1 contenteditable="true" id="user-name">Your Name</h1>
-            <p contenteditable="true" id="user-role">Role</p>
-            <div class="cv-sidebar-secion">
-                <h3>Contact</h3>
-                <p contenteditable="true" >📞 +1 234 567 890</p>
-                <p contenteditable="true">📩 email@example.com</p>
-            </div>
+            <button id="about-btn">About PortCraft</button>
+        </div>
 
-            <div class="cv cv-sidebar-secion">
-                <h3>Skills</h3>
-                <ul contenteditable="true" id="skills-list">
-                    <li>Javascript /HTML / CSS</li>
-                    <li>Supabase Integration</li>
-                </ul>
-            </div>
-        </aside>
 
-    <main class="cv-main-content">
+      <div id="invoice" class="section">
+        <div id="header">
+            <h1 contenteditable="true">Invoice</h1>
+            <p contenteditable="true">Invoice Number: #001</p>
+            <p contenteditable="true">Date: [Insert date]</p>
+        </div>
 
-        <section class="cv-block">
-            <h2>Work Experience</h2>
-
-            <div contenteditable="true" class="exp-info">
-                <strong>Junior developer</strong> | Tech Corp <br> . Lead the transition from locaStroage to cloud datbase
-            </div>
-            <div>
-                <button id="add-exp">+Add Experience</button>
-            </div>
-        </section>
-
-        <section class="invoice-style">
-            <h2>Professional Invoice</h2>
-            <div class="invoice-data">
-                <p>Date: <span contenteditable="true">Feb 24, 2026</span></p>
-                <p>Inv #: <span contenteditable="true">001</span></p>
-            </div>
-
-            <table id="invoice-table">
-                <thread>
-                    <tr>
+        <div id="from">
+            <h3>From:</h3>
+            <p contenteditable="true">[Company Name]</p>
+            <p contenteditable="true">[Address]</p>
+            <p contenteditable="true">[Your Email]</p>
+            <p contenteditable="true">[Your phone]</p>
+        </div>
+        <div id="to">
+            <h3>To:</h3>
+            <p contenteditable="true">[Client Name]</p>
+            <p contenteditable="true">[Client Address</p>
+            <p contenteditable="true">[Client Email]</p>
+            <p contenteditable="true">[Client Phone]</p>
+        </div>
+           
+        <table>
+            <thread>
+                <tr>
                     <th>Description</th>
-                    <th>Qty</th>
-                    <th>Rate</th>
+                    <th>Quantity</th>
+                    <th>Unit price</th>
                     <th>Total</th>
-                    </tr>
-                </thread>
-            <tbody id="invoice-body"></tbody>
-            </table>
-            
-            <button id="add-rrow" class="no-print">+Add Line Item</button>
-            <div class="invoice-total">
-                <p>Subtotal: <span id="subtotal">$0.00</span></p>
-                <p>Tax: <span id="tax">$0.00</span></p>
-                <hr>
-                <strong> Grand Total: <span id="grand-total">$0.00</span></strong>
-            </div>
-        </section>
+                </tr>
+            </thread>
+            <tbody>
+                <tr>
+                    <td contenteditable="true">[Item Description]</td>
+                    <td contenteditable="true">1</td>
+                    <td contenteditable="true">$100.00</td>
+                    <td contenteditable="true">$100.00</td>
+                </tr>
+            </tbody>
+        </table>
 
-        <section class="signature-area">
-            <h3>Authorized Signature</h3>
-            <canvas id="etch-pad" width="300" height="120"></canvas>
-            <div class="sig-control">
-                <button id="clear-sig">Erase</button>
-                <button id="go-to-game">Done? Let's play RPS</button>
-            </div>
-        </section>
+        <div id="total">
+            <p contenteditable="true">Subtotal: $100.00</p>
+            <p contenteditable="true">Tax: $10.00</p>
+            <p contenteditable="true">Total: $100.00</p>
+        </div>
 
-        
-    </main>
-    </div>
-</section>
+      </div>
+
 </body>
+<script src="workshop.js"></script>
 </html>
