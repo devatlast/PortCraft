@@ -1,7 +1,11 @@
 
 
+
+
+
+
 //Hashed password
-export async function hashpassword(pwd) {
+export async function hashPassword(pwd) {
     if (typeof pwd !== 'string') {
         throw new Error('Input must be a string');
     }
@@ -23,6 +27,18 @@ export async function hashpassword(pwd) {
         throw new Error('Failed to compute SHA_256 hash (Web Crypto Api unavailable?');
     }
 }
+
+
+function getUsers() {
+    return JSON.parse(localStorage.getItem('PortBox:')) || []
+}
+
+function saveUsers() {
+    localStorage.setItem('PortBox: users', JSON.stringify(users));
+}
+
+
+
 
 //portfolio bloc to get portfolio data
 
@@ -52,7 +68,7 @@ export function savePortfolio(allPortfoliosofdata) {
    }
 }
 // to register users
-export async function registerUsers(username, password) {
+export async function registerUser(username, password) {
     const users = getUsers();
     if (user.some(u => u.username === username)) {
         throw new Error("Username taken");
@@ -69,7 +85,7 @@ export async function loginUser(username, password) {
     const users = getUsers();
     const user = users.find(u => u.username === username.trim());
 
-    (!user) {
+    if (!user) {
         throw new Error("User not found");
     }
     const inputHash = await hashpassword(password);

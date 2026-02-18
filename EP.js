@@ -125,21 +125,34 @@ function getComputerChoice() {
 }
 
 function evaluateRound(playerChoice, computerChoice) {
-  if (playerChoice === computerChoice) return 'its a tie';
-  if (
+  if (playerChoice === computerChoice) {
+      return "it's a tie";
+  } 
+    if (
     (playerChoice === 'rock' && computerChoice === 'scissors') ||
     (playerChoice === 'scissors' && computerChoice === 'paper') ||
     (playerChoice === 'paper' && computerChoice === 'rock')
-  ) return 'player';
+  ) {return 'player';
+  }
   return 'computer';
 }
 
 function handleRound(playerChoice) {
   const comp = getComputerChoice();
   const result = evaluateRound(playerChoice, comp);
-  if (result === 'player') playerScore++;
-  else if (result === 'computer') computerScore++;
+  let message='';
 
+  if (result === 'player') {
+      playerScore++;
+      message = 'You win this round!'
+   } else if (result === 'computer') {
+    computerScore++;
+    message = 'Computer wins this round!'
+   } else {
+    message = "It's a tie";
+   }
+
+   alert(message);
   const pEl = document.getElementById('player-score');
   const cEl = document.getElementById('computer-score');
   if (pEl) pEl.innerText = playerScore;
@@ -148,8 +161,8 @@ function handleRound(playerChoice) {
 }
 
 function checkGameStatus() {
-  if (playerScore === 4) { alert('Congrats! You\'ve won the match.'); resetGame(); }
-  else if (computerScore === 4) { alert('Computer won. Try again.'); resetGame(); }
+  if (playerScore === 5) { alert('Congrats! You\'ve won the match.'); resetGame(); }
+  else if (computerScore === 5) { alert('Computer won. Try again.'); resetGame(); }
 }
 
 function resetGame() {

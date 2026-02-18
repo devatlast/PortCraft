@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PortCraft Workshop</title>
+    <script src="html2pdf.js"></script>
 </head>
 <body>
     <header>
@@ -19,7 +20,7 @@
     
     <div style="margin-top: 60px">
 
-        <div class="section">
+        <div class="section" id="portfolio">
             <div id="profile-img" contenteditable="true"></div>
             <h1 id="name" class="hidden" contenteditable="true">My Name</h1>
             <h2 id="job-title" contenteditable="true">Job-title</h2>
@@ -75,6 +76,8 @@
                 <img id="sig-img" style="display: none;" alt="Signature">
             </div>
             <button id="export-btn">Export to pdf</button>
+            <button id="about-btn">About PortCraft</button>
+
         </div>
 
 
@@ -92,8 +95,6 @@
                 <div id="msg-loader">AI thinking.......</div>
                 <button id="close-chat">CLOSE</button>
             </div>
-
-            <button id="about-btn">About PortCraft</button>
         </div>
 
 

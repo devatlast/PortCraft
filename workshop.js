@@ -51,7 +51,7 @@ function changeTheme(themeOpt) {
     //header
     document.querySelector('header').style.backgroundColor = theme.headerBg;
     //sections
-    document.querySelector('.section').forEach( section => {
+    document.querySelectorAll('.section').forEach( section => {
         section.style.backgroundColor = theme.sectionBg;
     });
      //headings
@@ -60,7 +60,7 @@ function changeTheme(themeOpt) {
     });
 
     document.getElementById('open-ai-chat').style.backgroundColor = theme.aibtnBg;
-    document.getElementById('open-ai-chat').style.color = aibtnColor;
+    document.getElementById('open-ai-chat').style.color = theme.aibtnColor;
      //hover effects for ai-chat-btn
     document.getElementById('open-ai-chat').addEventListener('mouseout', () => {
         document.getElementById('open-ai-chat').style.backgroundColor = theme.aibtnBg;
@@ -108,14 +108,29 @@ document.getElementById('clear-canvas').addEventListener('click', () => {
 });
 //apply signature
 document.getElementById('apply-signature').addEventListener('click', () => {
-    const dataUrl = canvas.toDataUrl();
+    const dataUrl = canvas.toDataURL();
     document.getElementById('sig-img').src = dataUrl;
 });
 //PDF export
 document.getElementById('export-btn').addEventListener('click', () => {
-    const element = document.body;
-    html2pdf().from(element).save('portfolio.pdf')
-})
+    let elementToExport = null;
+    let filename = '';
+
+    const invoice = document.getElementById('invoice');
+    const portfolio = document.getElementById('portfolio')
+
+    if (portfolio.style.display !== 'none') {
+        elementToExport = portfolio;
+        filename = 'portfolio.pdf';
+    }  else if (invoice.style.display !== 'none') {
+        elementToExport = invoice;
+        filename = 'invoice.pdf';
+    } else {
+        alert('No section is visible to export!');
+    }
+
+    html2pdf().from(elementToExport).save(filename);
+});
 
 
 
@@ -127,6 +142,8 @@ const aiSend = document.getElementById('ai-send-btn');
 const aiInput = document.getElementById('ai-chat-input');
 const aiHistory = document.getElementById('ai-chat-history');
 const aiClose = document.getElementById('close-chat');
+const aiLoader = document.getElementById('msg-loader')
+
 
 aiChatBtn.addEventListener('click', () => aiModal.style.display = 'block');
 aiClose.addEventListener('click', () => aiModal.style.display = 'none');
@@ -135,12 +152,12 @@ aiSend.addEventListener('click', () => {
     const userMessage = aiInput.value.trim();
     if(!userMessage) return;
 
-    aiHistory += `<p><strong>You: </strong> ${userMessage}</p>`;
+    aiHistory.innerHTML+= `<p><strong>You: </strong> ${userMessage}</p>`;
     aiInput.value = '';
     aiLoader.style.display = 'block';
     aiSend.disabled = true;
 
-    fetch('http://localhost:3000/api/chat', {
+    fetch('http://127.0.0.1:3000/api/chat', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ message: userMessage})

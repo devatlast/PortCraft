@@ -1,3 +1,6 @@
+import { registerUser, loginUser } from "./localStorage.js";
+
+
 
 
 
@@ -20,7 +23,7 @@ document.addEventListener('DOMContentLoaded', () => {
             signupBtn.style.transition = 'opacity 0.45 ease';
             signupBtn.style.opacity = '0';
             setTimeout(() =>{
-                window.location.href = 'port-invoice.html';
+                window.location.href = 'workshop.html';
             },400);
         } catch (err) {
             alert(err.message || 'Signup failed. Try again.')
