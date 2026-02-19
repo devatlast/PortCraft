@@ -49,31 +49,24 @@ function changeTheme(themeOpt) {
     document.body.style.color = theme.bodyColor;
     document.body.style.fontFamily = theme.font;
     //header
-    document.querySelector('header').style.backgroundColor = theme.headerBg;
+  
     //sections
     document.querySelectorAll('.section').forEach( section => {
         section.style.backgroundColor = theme.sectionBg;
     });
      //headings
-    document.querySelectorAll('h1, h2').forEach(h => {
+    document.querySelectorAll('h2, h3').forEach(h => {
         h.style.color = theme.hColor;
     });
+   
 
-    document.getElementById('open-ai-chat').style.backgroundColor = theme.aibtnBg;
-    document.getElementById('open-ai-chat').style.color = theme.aibtnColor;
-     //hover effects for ai-chat-btn
-    document.getElementById('open-ai-chat').addEventListener('mouseout', () => {
-        document.getElementById('open-ai-chat').style.backgroundColor = theme.aibtnBg;
-    });
-    document.getElementById('open-ai-chat').addEventListener('mouseover', () => {
-        document.getElementById('open-ai-chat').style.backgroundColor = theme.aibtnHover;
-    });
+    
+    
      //Export
     document.getElementById('export-btn').style.backgroundColor = theme.exportBg;
     document.getElementById('export-btn').style.color = theme.exportColor;
     //ai-modal
-    document.getElementById('ai-modal').style.backgroundColor = theme.modalBg;
-    document.getElementById('ai-modal').style.color = theme.modalColor;
+    
 
 }
 
