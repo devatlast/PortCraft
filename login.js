@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const password = document.getElementById('signup-pwd')?.value.trim();
         console.log('Trimmed username:', username, 'length:', username.length);
         console.log('Trimmed password:', password, 'Length:', password.length);
-        if (!username.length < 3 || !password.length < 6) {
+        if (username.length < 3 || password.length < 6) {
             alert ('Please fill in username at least 3 characters, password 6 or more.');
             return;
         }
@@ -43,7 +43,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const errMessage = document.getElementById('message');
         const successMsg = document.getElementById('suc-msg');  
 
-        if (!username || password) {
+        if (!username || !password) {
             errMessage.textContent = 'Please fill in username and password';
             errMessage.style.display = 'block';
             return;

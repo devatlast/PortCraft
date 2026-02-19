@@ -33,7 +33,7 @@ export function getUsers() {
     return JSON.parse(localStorage.getItem('PortBox: users')) || []
 }
 
-export function saveUsers() {
+export function saveUsers(users) {
     localStorage.setItem('PortBox: users', JSON.stringify(users));
 }
 
@@ -88,7 +88,7 @@ export async function loginUser(username, password) {
     if (!user) {
         throw new Error("User not found");
     }
-    const inputHash = await hashpassword(password);
+    const inputHash = await hashPassword(password);
     if (inputHash !== user.passwordHash) {
         throw new Error("Incorrect password");
     }

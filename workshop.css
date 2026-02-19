@@ -6,13 +6,61 @@
     padding: 0;
     box-sizing: border-box;
 }
+
 body {
-    background: #f5f5f5;
-    color: brown;
-    min-height: 100vh;
+    background: #f4f4f4;
+    color: #333;
+    line-height: 1.6;
     padding: 25px;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; 
 }
+
 .hidden {
     display: block;
+}
+
+.section {
+    margin: 20px;
+    padding: 20px;
+    max-width: 1200px;
+    background-color: white;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+#portfolio h1, #portfolio h2, #user-date h3 {
+    color: whitesmoke;
+    margin-bottom: 10px;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+#user-date , #experience {
+    padding: 20px;
+    border-radius: 0 8px 8px 0;
+    background-color: #f4f4f4;
+}
+
+#user-date h2, #experience h2 {
+    border-bottom: 2px solid #333;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+button {
+    background-color: #a52;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 4px;
+    margin-right: 10px;
+}
+button :hover {background-color: #333;}
+
+#signature-canvas {
+    border: 1px solid;
+    background-color: white;
+    margin-bottom: 10px; 
 }
