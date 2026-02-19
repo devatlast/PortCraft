@@ -29,11 +29,11 @@ export async function hashPassword(pwd) {
 }
 
 
-function getUsers() {
-    return JSON.parse(localStorage.getItem('PortBox:')) || []
+export function getUsers() {
+    return JSON.parse(localStorage.getItem('PortBox: users')) || []
 }
 
-function saveUsers() {
+export function saveUsers() {
     localStorage.setItem('PortBox: users', JSON.stringify(users));
 }
 
@@ -70,10 +70,10 @@ export function savePortfolio(allPortfoliosofdata) {
 // to register users
 export async function registerUser(username, password) {
     const users = getUsers();
-    if (user.some(u => u.username === username)) {
+    if (users.some(u => u.username === username)) {
         throw new Error("Username taken");
     }
-    const passwordHash = await hashpassword(password);
+    const passwordHash = await hashPassword(password);
     const newUser = { username, passwordHash, createdAt: new Date().toISOString()};
     users.push(newUser);
     saveUsers(users);
