@@ -85,16 +85,26 @@ themeSelector.value = savedTheme;
 
 //signature canvas logic
 const canvas = document.getElementById('signature-canvas');
-const ctx = canvas.getContext('2d');
+const ctx = canvas.getContext('2d', { willReadFrequently: true});
+console.log(canvas);
+console.log(ctx);
+ctx.lineWidth = 2;
+ctx.strokeStyle = '#000000';
 let drawing = false;
-canvas.addEventListener('mousedown', () => drawing = true);
+canvas.addEventListener('mousedown', (e) => {
+    drawing = true;
+    ctx.beginPath();
+    ctx.moveTo(e.offsetX, e.offsetY)
+});
+
 canvas.addEventListener('mouseup', () => drawing = false );
 canvas.addEventListener('mousemove', (e) => {
     if(drawing) {
-        ctx.LineTo(e.offsetX, e.offsetY);
+        ctx.lineTo(e.offsetX, e.offsetY);
         ctx.stroke();
     }
 });
+
 //clear signature canvas
 document.getElementById('clear-canvas').addEventListener('click', () => {
     ctx.clearRect(0, 0, canvas.width, canvas.height );
@@ -104,25 +114,27 @@ document.getElementById('apply-signature').addEventListener('click', () => {
     const dataUrl = canvas.toDataURL();
     document.getElementById('sig-img').src = dataUrl;
 });
+
+
 //PDF export
+addScript('https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js', function() {
 document.getElementById('export-btn').addEventListener('click', () => {
-    let elementToExport = null;
-    let filename = '';
+    const elementToExport = document.getElementById('portfolio');
+    if (portfolio) portfolio.style.display = 'block';
+    if (invoice) invoice.style.display = 'none';
 
-    const invoice = document.getElementById('invoice');
-    const portfolio = document.getElementById('portfolio')
+    const opt = {
+        margin: 1,
+        filename: 'portfolio.pdf',
+        image: { type: 'jpeg', quality: 0.98 },
+        html2canvas: { scale: 2, useCORS: true},
+        jsPDF: { unit: 'in', format: 'letter', orientation: 'portrait'}
+    };
 
-    if (portfolio.style.display !== 'none') {
-        elementToExport = portfolio;
-        filename = 'portfolio.pdf';
-    }  else if (invoice.style.display !== 'none') {
-        elementToExport = invoice;
-        filename = 'invoice.pdf';
-    } else {
-        alert('No section is visible to export!');
-    }
-
-    html2pdf().from(elementToExport).save(filename);
+    html2pdf().set(opt).from(elementToExport).save().then(() =>  {
+        console.log('Export complete');
+    }).catch(err => console.error('Export error:', err));
+  });
 });
 
 
@@ -179,3 +191,45 @@ aiSend.addEventListener('click', () => {
         aiSend.disabled = false;
     });
 });
+
+
+
+//Upload Image
+const uploadBtn = document.getElementById('upload-btn');
+const profileInput = document.getElementById('profile-upload');
+const profileImg = document.getElementById('profile-img');
+
+if (uploadBtn && profileInput && profileImg) {
+    uploadBtn.addEventListener('click', () => profileInput.click());
+    profileInput.addEventListener('change', (e) => {
+      const file = e.target.files[0];
+      if (file) {
+        const reader = new FileReader();
+        reader.onload = (event) => {
+            profileImg.src = event.target.result;
+            profileImg.style.display = 'block';
+            uploadBtn.style.display = 'none';
+        };
+        reader.readAsDataURL(file);
+      }
+    });
+}
+
+
+// about portcraft buttton to back to home/about
+
+const aboutBtn = document.getElementById('about-btn');
+const aboutSection = document.getElementById('about-link');
+const backToHome = document.getElementById('back-to-home');
+const portfolio = document.getElementById('portfolio');
+
+if (aboutBtn && aboutSection && backToHome) {
+    aboutBtn.addEventListener('click', () => {
+        portfolio.style.display = 'none';
+        aboutSection.style.display = 'block';
+    });
+    backToHome.addEventListener('click', () => {
+        aboutSection.style.display = 'none';
+        portfolio.style.display = 'block';
+    });
+}

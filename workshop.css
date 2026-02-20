@@ -53,6 +53,9 @@ h1 {
     color: whitesmoke;
     margin-bottom: 10px;
 }
+#portfolio {
+    position: relative;
+}
 
 ul {
     list-style: inside;
