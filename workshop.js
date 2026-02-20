@@ -138,8 +138,9 @@ const aiClose = document.getElementById('close-chat');
 const aiLoader = document.getElementById('msg-loader')
 
 
-aiChatBtn.addEventListener('click', () => aiModal.style.display = 'block');
-aiClose.addEventListener('click', () => aiModal.style.display = 'none');
+aiChatBtn.addEventListener('click', () => aiModal.classList.add('open'));
+console.log('opened');
+aiClose.addEventListener('click', () => aiModal.classList.remove('open'));
 //integrating ai with chat messages
 aiSend.addEventListener('click', () => {
     const userMessage = aiInput.value.trim();
