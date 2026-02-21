@@ -23,7 +23,7 @@
 <div style="margin-top: 60px">
 
     <div class="section" id="portfolio">
-            <input type="file" id="profile-upload" accept="image/*" style="display:none;">
+            <input type="file" id="profile-upload" accept="image/*" style="display:none;" crossOrigin="anonymous">
             <button id="upload-btn">Upload Profile Picture</button>
             <img id="profile-img" src="" alt="Profile Picture" style="width: 100px; height: 100px; border-radius: 50%; display: none;">
             <h2 id="name" class="hidden" contenteditable="true">My Name</h2>
@@ -76,6 +76,7 @@
                 <img id="sig-img" style="display: none;" alt="Signature">
           </div>
     </div>    
+    
         <button id="export-btn">Export to pdf</button>
             <button id="about-btn">About PortCraft</button>
 

@@ -119,21 +119,40 @@ document.getElementById('apply-signature').addEventListener('click', () => {
 //PDF export
 addScript('https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js', function() {
 document.getElementById('export-btn').addEventListener('click', () => {
-    const elementToExport = document.getElementById('portfolio');
-    if (portfolio) portfolio.style.display = 'block';
-    if (invoice) invoice.style.display = 'none';
+    const portfolio = document.getElementById('portfolio');
+    const invoice = document.getElementById('invoice');
+    
+    if (!portfolio || !invoice) return alert('portfolio or invoice section not found!')
+         // Wrapper div for both sections
+        const wrapper = document.createElement('div');
+        if (!wrapper || !wrapper.style) {
+            console.error('Wrapper creation failed!', wrapper);
+            return;
+        }
+        wrapper.style.position = 'absolute';
+        wrapper.style.left = '-9999px';
+        wrapper.appendChild(portfolio.cloneNode(true));
+        // page break for pdf via css
+        const pageBreak = document.createElement('div');
+        pageBreak.style.pageBreakAfter = 'Always';
+        wrapper.appendChild(invoice.cloneNode(true));
+        document.body.appendChild(wrapper);
 
-    const opt = {
-        margin: 1,
-        filename: 'portfolio.pdf',
-        image: { type: 'jpeg', quality: 0.98 },
-        html2canvas: { scale: 2, useCORS: true},
-        jsPDF: { unit: 'in', format: 'letter', orientation: 'portrait'}
-    };
+        const opt = {
+            margin: [0.5, 0.5, 0.5, 0.5],
+            filename: 'portfolio_and_invoice.pdf',
+            image: {type: 'JPEG', quality: 0.98 },
+            html2canvas: {scale: 2, useCORS: true, allowTaint: true},
+            jsPDF: { unit: 'in', format: 'letter', orientation: 'portrait'}
+        };
 
-    html2pdf().set(opt).from(elementToExport).save().then(() =>  {
-        console.log('Export complete');
-    }).catch(err => console.error('Export error:', err));
+        setTimeout( () => {
+            html2pdf().set(opt).from(wrapper).save().then(() => {
+                document.body.removeChild(wrapper);
+            }).catch(err => console.error('Html2pdf error', err));
+            alert('Export failed: see console for details.');
+        }, 1000)
+        
   });
 });
 
@@ -207,6 +226,7 @@ if (uploadBtn && profileInput && profileImg) {
         const reader = new FileReader();
         reader.onload = (event) => {
             profileImg.src = event.target.result;
+            profileImg.crossOrigin = 'anonymous';
             profileImg.style.display = 'block';
             uploadBtn.style.display = 'none';
         };
