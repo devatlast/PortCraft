@@ -40,7 +40,7 @@ const themes = {
 
 
 
-// Function to apply themes
+// Function to apply themes to portfolio
 function changeTheme(themeOpt) {
     const theme = themes[themeOpt];
     if (!theme) return;
@@ -48,7 +48,7 @@ function changeTheme(themeOpt) {
     document.body.style.backgroundColor = theme.bgBody;
     document.body.style.color = theme.bodyColor;
     document.body.style.fontFamily = theme.font;
-    //header
+    
   
     //sections
     document.querySelectorAll('.section').forEach( section => {
@@ -65,7 +65,6 @@ function changeTheme(themeOpt) {
      //Export
     document.getElementById('export-btn').style.backgroundColor = theme.exportBg;
     document.getElementById('export-btn').style.color = theme.exportColor;
-    //ai-modal
     
 
 }

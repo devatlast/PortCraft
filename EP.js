@@ -55,7 +55,7 @@ if (noBtn) {
       if (mainText) mainText.textContent = "Fine i'll make Yes impossible to miss!";
     }
     if (yesBtn) {
-      const nowScale = 1 + (noCount * 0.5);
+      const nowScale = 1 + (noCount * 0.3);
       yesBtn.style.transform = `scale(${nowScale})`;
       yesBtn.style.transition = 'transform 0.3s ease';
     }
