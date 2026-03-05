@@ -23,7 +23,7 @@ export async function hashPassword(pwd) {
 
         return hashedHex;
     } catch (err) {
-        console.error('Hashing error:', error);
+        console.error('Hashing error:', err);
         throw new Error('Failed to compute SHA_256 hash (Web Crypto Api unavailable?');
     }
 }

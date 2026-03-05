@@ -48,7 +48,6 @@ function changeTheme(themeOpt) {
     document.body.style.backgroundColor = theme.bgBody;
     document.body.style.color = theme.bodyColor;
     document.body.style.fontFamily = theme.font;
-    
   
     //sections
     document.querySelectorAll('.section').forEach( section => {
