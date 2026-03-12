@@ -81,9 +81,9 @@ if (yesBtn) {
     } 
     setTimeout( () =>{
       console.log('Redirecting now!...')
-      window.location.href = 'http://127.0.0.1:5500/login.html'
-          window.location,href= 'login.html';
-        }, 400);
+      window.location.href = 'http://127.0.0.1:5500/workshop.html'
+          window.location,href= 'workshop.html';
+        }, 100);
   });
 }
 });

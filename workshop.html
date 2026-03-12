@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -26,7 +28,7 @@
             <input type="file" id="profile-upload" accept="image/*" style="display:none;" crossOrigin="anonymous">
             <button id="upload-btn">Upload Profile Picture</button>
             <img id="profile-img" src="" alt="Profile Picture" style="width: 100px; height: 100px; border-radius: 50%; display: none;">
-            <h2 id="name" class="hidden" contenteditable="true">My Name</h2>
+            <h2 id="name" class="hidden" contenteditable="true">Name</h2>
             <h2 id="job-title" contenteditable="true">Job-title</h2>
             <div id="Contact">Contact details</div>
             <ul>
@@ -75,10 +77,15 @@
                 <button id="apply-signature">Apply Signature</button> 
                 <img id="sig-img" style="display: none;" alt="Signature">
           </div>
+          <div id="portfolio-download">
+            <button id="portfolio-btn">Download Portfolio</button>
+          </div>
     </div>    
     
-        <button id="export-btn">Export to pdf</button>
+        
             <button id="about-btn">About PortCraft</button>
+
+            
 
         <div id="ai-modal" class="section">
             <div id="ai-chat-header">
@@ -98,7 +105,7 @@
         </div>
 
 
-      <div id="invoice" class="section">
+    <div id="invoice" class="section">
         <div id="header">
             <h2>Invoice</h2>
             <p contenteditable="true">Invoice Number: #001</p>
@@ -144,8 +151,10 @@
             <p contenteditable="true">Tax: $10.00</p>
             <p contenteditable="true">Total: $100.00</p>
         </div>
-
-      </div>
+            <div id="download-invoice">
+                <button id="invoice-btn">Download Invoice</button>
+            </div>
+    </div>
 
 </body>
 <script src="workshop.js"></script>

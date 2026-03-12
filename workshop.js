@@ -62,8 +62,10 @@ function changeTheme(themeOpt) {
     
     
      //Export
-    document.getElementById('export-btn').style.backgroundColor = theme.exportBg;
-    document.getElementById('export-btn').style.color = theme.exportColor;
+    document.querySelectorAll('#portfolio-btn, #invoice-btn').forEach(btn => {
+        btn.style.backgroundColor = theme.btnBg;
+        btn.style.color = theme.btnColor;
+    });
     
 
 }
@@ -110,49 +112,13 @@ document.getElementById('clear-canvas').addEventListener('click', () => {
 //apply signature
 document.getElementById('apply-signature').addEventListener('click', () => {
     const dataUrl = canvas.toDataURL();
-    document.getElementById('sig-img').src = dataUrl;
+    const img = document.getElementById('sig-img');
+    img.src = dataUrl;
+    img.style,display = "block";
 });
 
 
-//PDF export
-addScript('https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js', function() {
-document.getElementById('export-btn').addEventListener('click', () => {
-    const portfolio = document.getElementById('portfolio');
-    const invoice = document.getElementById('invoice');
-    
-    if (!portfolio || !invoice) return alert('portfolio or invoice section not found!')
-         // Wrapper div for both sections
-        const wrapper = document.createElement('div');
-        if (!wrapper || !wrapper.style) {
-            console.error('Wrapper creation failed!', wrapper);
-            return;
-        }
-        wrapper.style.position = 'absolute';
-        wrapper.style.left = '-9999px';
-        wrapper.appendChild(portfolio.cloneNode(true));
-        // page break for pdf via css
-        const pageBreak = document.createElement('div');
-        pageBreak.style.pageBreakAfter = 'Always';
-        wrapper.appendChild(invoice.cloneNode(true));
-        document.body.appendChild(wrapper);
 
-        const opt = {
-            margin: [0.5, 0.5, 0.5, 0.5],
-            filename: 'portfolio_and_invoice.pdf',
-            image: {type: 'JPEG', quality: 0.98 },
-            html2canvas: {scale: 2, useCORS: true, allowTaint: true},
-            jsPDF: { unit: 'in', format: 'letter', orientation: 'portrait'}
-        };
-
-        setTimeout( () => {
-            html2pdf().set(opt).from(wrapper).save().then(() => {
-                document.body.removeChild(wrapper);
-            }).catch(err => console.error('Html2pdf error', err));
-            alert('Export failed: see console for details.');
-        }, 1000)
-        
-  });
-});
 
 
 
@@ -251,3 +217,35 @@ if (aboutBtn && aboutSection && backToHome) {
         portfolio.style.display = 'block';
     });
 }
+
+
+// Buttons to download Invoice and Portfolio
+
+document.getElementById("invoice-btn").addEventListener('click', () => {
+    const element = document.getElementById("invoice");
+    setTimeout(() => {
+    html2pdf().set ({
+        margin: 0.5,
+        filename: "invoice.pdf",
+        html2canvas: {scale: 3, 
+            useCORS: true
+        },
+        jsPDF: { unit: "in", format: "letter", orientation: "portrait"}
+    }).from(element).save();
+},500);
+});
+
+
+document.getElementById("portfolio-btn").addEventListener('click', () => {
+    const element = document.getElementById("portfolio");
+    setTimeout(() => {
+    html2pdf().set({
+        margin: 0.5,
+        filename: "portfolio.pdf",
+        html2canvas: {scale: 3,
+            useCORS: true
+        },
+        jsPDF: { unit: "px", format: "a4", orientation: "portrait"}
+    }).from(element).save();
+}, 500);
+});
