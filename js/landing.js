@@ -195,4 +195,4 @@ if (backToHomeEl) {
   backToHomeEl.addEventListener('click', (e) => { e.preventDefault(); location.reload(); });
 }
 
-// End of file — workshop/portfolio logic intentionally removed
+// End of file — workshop/portfolio logic removed

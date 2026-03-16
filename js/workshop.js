@@ -125,7 +125,7 @@ document.getElementById('apply-signature').addEventListener('click', () => {
 //AI
 const aiModal = document.getElementById('ai-modal');
 const aiChatBtn =document.getElementById('open-ai-chat');
-const closeAiModal = document.getElementById('close-chat');
+const closeAiModal = document.getElementById('ai-close-btn');
 const aiSend = document.getElementById('ai-send-btn');
 const aiInput = document.getElementById('ai-chat-input');
 const aiHistory = document.getElementById('ai-chat-history');
@@ -135,7 +135,8 @@ const aiLoader = document.getElementById('msg-loader')
 
 aiChatBtn.addEventListener('click', () => aiModal.classList.add('open'));
 console.log('opened');
-aiClose.addEventListener('click', () => aiModal.classList.remove('open'));
+
+closeAiModal.addEventListener("click", ()=> aiModal.classList.remove('open'));
 //integrating ai with chat messages
 aiSend.addEventListener('click', () => {
     const userMessage = aiInput.value.trim();
@@ -200,23 +201,19 @@ if (uploadBtn && profileInput && profileImg) {
 }
 
 
-// about portcraft buttton to back to home/about
+// about portcraft buttton to back 
 
-const aboutBtn = document.getElementById('about-btn');
+/*const aboutBtn = document.getElementById('about-btn');
 const aboutSection = document.getElementById('about-link');
 const backToHome = document.getElementById('back-to-home');
+const workshopBtn = document.getElementById('back-to-workshop');
 const portfolio = document.getElementById('portfolio');
 
-if (aboutBtn && aboutSection && backToHome) {
-    aboutBtn.addEventListener('click', () => {
-        portfolio.style.display = 'none';
-        aboutSection.style.display = 'block';
-    });
-    backToHome.addEventListener('click', () => {
-        aboutSection.style.display = 'none';
-        portfolio.style.display = 'block';
-    });
-}
+
+
+aboutBtn.addEventListener("click", () => {
+    window.location.href = "index.html#results"
+});*/
 
 
 // Buttons to download Invoice and Portfolio

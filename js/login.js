@@ -1,4 +1,4 @@
-import { registerUser, loginUser } from "./localStorage.js";
+import { registerUser, loginUser } from "../localStorage.js";
 
 
 

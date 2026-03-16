@@ -6,12 +6,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PortCraft Workshop</title>
-    <link rel="stylesheet" href="workshop.css">
-    <script src="html2pdf.js"></script>
+    <link rel="stylesheet" href="./css/workshop.css">
+    <script src="./js/html2pdf.js"></script>
 </head>
 <body>
     <header>
         <h1>PortCraft Workshop</h1>
+        <a href="index.html">Back</a>
         <button id="open-ai-chat" >AI</button>
         <select id="theme-select">
             <option value="default">Default (light Professional)</option>
@@ -52,16 +53,14 @@
             <li>French: Intermediate</li>
          </ul>
         
+          <h2 id="work">Work Experience</h2>
+         <ul id="user-date" contenteditable="true">
+            <li>Software developer - Jan 2020 - Dec 2024</li>
+            <li>Company</li>
+            <li>I developed and maintained web applications using languages such as, Html, CSS, Javascript and PHP</li>
+            <li>Worked with cross-functional teams to gather requirements and design user interfaces.</li>
+         </ul>
 
-         <div id="user-date" >
-            <h2 id="work">Work Experience</h2>
-            <p contenteditable="true">Software developer - Jan 2020 - Dec 2024</p>
-            <p contenteditable="true">Company</p>
-            <ul contenteditable="true">
-                <li>I developed and maintained web applications using languages such as, Html, CSS, Javascript and PHP</li>
-                <li>Worked with cross-functional teams to gather requirements and design user interfaces.</li>
-            </ul>
-         </div>
          <div id="Education">
             <h2>Education</h2>
             <p contenteditable="true">Bsc. Cybersecurity 2020 - 2024</p>
@@ -83,7 +82,7 @@
     </div>    
     
         
-            <button id="about-btn">About PortCraft</button>
+    
 
             
 
@@ -100,7 +99,7 @@
                
                 <button id="ai-send-btn">SEND</button>
                
-                <button id="close-chat">CLOSE</button>
+
             </div>
         </div>
 
@@ -138,7 +137,7 @@
             </thread>
             <tbody>
                 <tr>
-                    <td contenteditable="true">[Item Description]</td>
+                    <td contenteditable="true">[Fertilizer]</td>
                     <td contenteditable="true">1</td>
                     <td contenteditable="true">$100.00</td>
                     <td contenteditable="true">$100.00</td>
@@ -157,5 +156,5 @@
     </div>
 
 </body>
-<script src="workshop.js"></script>
+<script src="./js/workshop.js"></script>
 </html>

@@ -1,5 +1,7 @@
 
-
+html{
+    scroll-behavior: smooth;
+}
 
 * {
     margin: 0;
@@ -11,7 +13,7 @@ body {
     background: #f4f4f4;
     color: #333;
     line-height: 1.6;
-    padding: 25px;
+    
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     display: flex;
     flex-direction: column;
@@ -27,15 +29,20 @@ body {
 
 
 header {
-    text-align: center;
-    padding: 20px;
+    padding: 40 20px;
     margin: 10px;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
 }
 h1 {
     font-family: cursive;
     font-weight: 600;
     color: #a52;
     background: #f2f2f2;
+}
+ul {
+    list-style: inside;
 }
 
 .section {
@@ -49,31 +56,27 @@ h1 {
     box-shadow: 0 0 10px rgba(0,0,0,0.1);
 }
 
+/* Portfolio, portfolio headers*/
 #portfolio h1, #portfolio h2, #user-date h3 {
     color: whitesmoke;
     margin-bottom: 10px;
 }
 #portfolio {
     position: relative;
-}
-
-ul {
-    list-style: inside;
-    padding: 0;
-    padding-left: 0;
-}
-
-#user-date , #experience {
     padding: 20px;
-    border-radius: 0 8px 8px 0;
-    background-color: #f4f4f4;
 }
+/* portfolio and headers ends here*/
 
-#user-date h2, #experience h2 {
-    border-bottom: 2px solid #333;
-    padding-bottom: 10px;
-    margin-bottom: 20px;
+
+/* Work Experience*/
+#user-date {
+    border-radius: 0 8px 8px 0;
 }
+#user-date h2 {
+    border-bottom: 2px solid #333;
+}
+/*work experience ends here*/
+
 
 button {
     background-color: #a52;
@@ -85,6 +88,7 @@ button {
 }
 button :hover {background-color: #333;}
 
+/*Signature */
 #signature-canvas {
     width: 60%;
     border: 1px solid;
@@ -95,6 +99,12 @@ button :hover {background-color: #333;}
     margin: 10px auto;
     display: block;
 }
+/*Sig ends here*/
+
+
+
+
+/*Invoice */
 #invoice th, #invoice td {
     border: 1px solid #ddd;
     padding: 12px;
@@ -114,6 +124,9 @@ button :hover {background-color: #333;}
 #invoice table {
     margin: 20px auto;
 }
+/* Invoice styling ends here*/
+
+/*Ai Modal*/
 #ai-modal {
     position: fixed;
     top: 0;
@@ -157,6 +170,8 @@ button :hover {background-color: #333;}
     border: 1px solid #ddd;
     border-radius: 4px;
 }
+/*Ai ends here*/
+
 @media (max-width: 768px) {
     #ai-modal {
         width: 100%;

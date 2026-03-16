@@ -1,5 +1,7 @@
 
-
+html{
+    scroll-behavior: smooth;
+}
 :root {
     --bg-color: whitesmoke;
     --text-color: #000;
