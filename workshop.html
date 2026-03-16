@@ -12,7 +12,8 @@
 <body>
     <header>
         <h1>PortCraft Workshop</h1>
-        <a href="index.html">Back</a>
+<a href="index.html">Back to Home</a>
+        <div id="bottom-header">
         <button id="open-ai-chat" >AI</button>
         <select id="theme-select">
             <option value="default">Default (light Professional)</option>
@@ -20,6 +21,8 @@
             <option value="vibrant">Vibrant</option>
             <option value="minimalist">Minimalist</option>
         </select>
+        </div>
+
     </header>
     
     
@@ -29,14 +32,12 @@
             <input type="file" id="profile-upload" accept="image/*" style="display:none;" crossOrigin="anonymous">
             <button id="upload-btn">Upload Profile Picture</button>
             <img id="profile-img" src="" alt="Profile Picture" style="width: 100px; height: 100px; border-radius: 50%; display: none;">
-            <h2 id="name" class="hidden" contenteditable="true">Name</h2>
-            <h2 id="job-title" contenteditable="true">Job-title</h2>
+            <h2 id="name" class="hidden" contenteditable="true">John Henry</h2>
+            <h2 id="job-title" contenteditable="true">Junior Developer</h2>
             <div id="Contact">Contact details</div>
-            <ul>
-                <li contenteditable="true">Phone: +123456789</li>
-                <li contenteditable="true">Email: example@gmail.com</li>
-                <li contenteditable="true">Address: #1, PortCity</li>
-            </ul>
+                <p contenteditable="true">📞 Phone: +123456789</p>
+                <p contenteditable="true">📥 Email: example@gmail.com</p>
+                <p contenteditable="true">📍 Address: #1, PortCity</p>
              
             <h2 >Skills</h2>
             <ul contenteditable="true">
@@ -69,7 +70,7 @@
          </div>
           
 
-          <div class="section">
+          <div >
                 <h3>Your Signature Here</h3>
                 <canvas id="signature-canvas" width="400" height="200"></canvas>
                 <button id="clear-canvas">Clear</button>
