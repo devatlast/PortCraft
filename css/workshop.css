@@ -14,8 +14,6 @@ body {
     color: #333;
     line-height: 1.6;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS',Arial, Helvetica, sans-serif, sans-serif;
-    display: flex;
-    flex-direction: column;
     min-height: 100vh;
     box-sizing: border-box;
     text-align: center;
@@ -28,10 +26,12 @@ body {
 
 /*Header*/
 header {
-    box-shadow: 0 4px 6px solid rgba(0,0,0,0.6);
-    background: #1e293b;
+    box-shadow: 0 10px 25px solid rgba(0,0,0,0.6);
+    background: rgb(36, 24, 1);
     margin-top: 8px;
     width: 100%;
+    border-radius: 10px;
+    border:2px solid white;
     max-width: 100%;
 }
 h1 {
@@ -74,7 +74,7 @@ ul {
     padding: 25px;
     margin: auto;
     text-align: left;
-    align-items: center;
+    display: block;
     background-color: white;
     box-shadow: 0 0 10px rgba(0,0,0,0.1);
 }
@@ -82,13 +82,15 @@ ul {
 
 
 /* Portfolio, portfolio headers*/
-#portfolio h1, #portfolio h2, #user-date h3 {
+#portfolio h1, h3 {
     color: whitesmoke;
-    margin-bottom: 10px;
+    margin-top: 10px;
 }
 #portfolio {
     position: relative;
     padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.3);
 }
 /* portfolio and headers ends here*/
 
@@ -133,6 +135,9 @@ button :hover {background-color: #333;}
     margin: 10px auto;
     display: block;
 }
+#signature h3 {
+    margin-top: 15px;
+}
 /*Sig ends here*/
 
 
@@ -151,6 +156,8 @@ button :hover {background-color: #333;}
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif,Arial, Helvetica, sans-serif;
     font-weight: 500;
     margin-top: 20px ;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+    border-radius: 12px;
 }
 #to,#from,#total,table{
     margin: 10px;
@@ -194,12 +201,7 @@ button :hover {background-color: #333;}
     justify-content: space-between;
     align-items: center;
 }
-/* #ai-close-btn {
-    background: none;
-    border: none;
-    font-size: 24px;
-    cursor: pointer;
-}*/
+
 #chat-input{
     display: flex;
     gap: 10px;

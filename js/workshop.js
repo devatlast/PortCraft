@@ -71,19 +71,29 @@ function changeTheme(themeOpt) {
 }
 
 //logic for theme-selector
-const themeSelector = document.getElementById('theme-select');
+/*const themeSelector = document.getElementById('theme-select');
 themeSelector.addEventListener('change', (e) => {
     changeTheme(e.target.value);
     localStorage.setItem('selectedTheme', e.target.value);
-});
+});*/
 //save and load theme
-const savedTheme = localStorage.getItem('selectedTheme') || 'default';
+/*const savedTheme = localStorage.getItem('selectedTheme') || 'default';
 changeTheme(savedTheme);
 themeSelector.value = savedTheme;
+*/
+
+
+
+/*========Theme selector======*/
+const themeSelector = document.getElementById('theme-select');
+themeSelector.addEventListener('change', (e) => {
+    changeTheme(e.target.value);
+});
 
 
 
 //signature canvas logic
+document.addEventListener("DOMContentLoaded", () => {
 const canvas = document.getElementById('signature-canvas');
 const ctx = canvas.getContext('2d', { willReadFrequently: true});
 console.log(canvas);
@@ -104,17 +114,26 @@ canvas.addEventListener('mousemove', (e) => {
         ctx.stroke();
     }
 });
+})
 
 //clear signature canvas
 document.getElementById('clear-canvas').addEventListener('click', () => {
+    const canvas = document.getElementById('signature-canvas');
+    const ctx = canvas.getContext('2d');
     ctx.clearRect(0, 0, canvas.width, canvas.height );
 });
 //apply signature
 document.getElementById('apply-signature').addEventListener('click', () => {
+    const canvas = document.getElementById('signature-canvas');
+    const clear = document.getElementById('clear-canvas');
+    const apply = document.getElementById('apply-signature')
     const dataUrl = canvas.toDataURL();
     const img = document.getElementById('sig-img');
     img.src = dataUrl;
-    img.style,display = "block";
+    img.style.display = "block";
+    canvas.style.display = "none";
+    clear.style.display = "none";
+    apply.style.display = "none";
 });
 
 
@@ -216,20 +235,20 @@ aboutBtn.addEventListener("click", () => {
 });*/
 
 
-// Buttons to download Invoice and Portfolio
+/* =======Buttons to download Invoice and Portfolio=========*/
 
 document.getElementById("invoice-btn").addEventListener('click', () => {
     const element = document.getElementById("invoice");
     setTimeout(() => {
     html2pdf().set ({
-        margin: 0.5,
+        margin: [10,10,10,10],
         filename: "invoice.pdf",
-        html2canvas: {scale: 3, 
+        html2canvas: {scale: 2, 
             useCORS: true
         },
-        jsPDF: { unit: "in", format: "letter", orientation: "portrait"}
+        jsPDF: { unit: "mm", format: "a4", orientation: "portrait"}
     }).from(element).save();
-},500);
+},1000);
 });
 
 
@@ -237,12 +256,16 @@ document.getElementById("portfolio-btn").addEventListener('click', () => {
     const element = document.getElementById("portfolio");
     setTimeout(() => {
     html2pdf().set({
-        margin: 0.5,
+        margin: [10,10,10,10],
         filename: "portfolio.pdf",
-        html2canvas: {scale: 3,
+        html2canvas: {scale: 2,
             useCORS: true
         },
-        jsPDF: { unit: "px", format: "a4", orientation: "portrait"}
+        
+        jsPDF: { unit: "mm", format: "a4", orientation: "portrait"},
+        pagebreak: {
+            mode: ['avoid-all', 'css', 'legacy']
+        }
     }).from(element).save();
-}, 500);
+}, 1000);
 });

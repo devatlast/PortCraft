@@ -4,14 +4,14 @@ html{
 }
 :root {
     --bg-color: whitesmoke;
-    --text-color: #000;
+    --text-color: #222;
     --accent: #00ff6347;
     --font-main: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
 [data-theme = 'dark'] {
     --bg-color: #000;
-    --text-color: #ffffff;
+    --text-color: #fff;
     --accent: #ff00ea;
 
 }
@@ -43,8 +43,12 @@ header {
     /* FIX: Changed from hardcoded #000 to var(--text-color) to support dark mode */
     color: var(--text-color);
     width: 100%;
+   
     gap: 5px;
     border-bottom: 2px solid rgba(0,0,0,0.1);
+    background: rgb(84, 132, 132);
+    border-radius: 10px;
+    border: 2px solid white;
     box-sizing: border-box;
     margin-bottom: 50px;
 }
@@ -290,6 +294,7 @@ nav ul {
 
 #rock:hover, #paper:hover, #scissors:hover {
     background-color: #a52;
+    transform: scale(1.05);
 }
 
 #right {
