@@ -94,30 +94,54 @@ themeSelector.addEventListener('change', (e) => {
 
 //signature canvas logic
 document.addEventListener("DOMContentLoaded", () => {
-const canvas = document.getElementById('signature-canvas');
-const ctx = canvas.getContext('2d', { willReadFrequently: true});
-console.log(canvas);
-console.log(ctx);
-ctx.lineWidth = 2;
-ctx.strokeStyle = '#000000';
-let drawing = false;
-canvas.addEventListener('mousedown', (e) => {
+  const canvas = document.getElementById('signature-canvas');
+  const ctx = canvas.getContext('2d', { willReadFrequently: true});
+  console.log(canvas);
+  console.log(ctx);
+  ctx.lineWidth = 2;
+  ctx.strokeStyle = '#000000';
+  let drawing = false;
+  canvas.addEventListener('mousedown', (e) => {
     drawing = true;
     ctx.beginPath();
     ctx.moveTo(e.offsetX, e.offsetY)
-});
+  });
 
-canvas.addEventListener('mouseup', () => drawing = false );
-canvas.addEventListener('mousemove', (e) => {
+  canvas.addEventListener('mouseup', () => drawing = false );
+  canvas.addEventListener('mousemove', (e) => {
     if(drawing) {
         ctx.lineTo(e.offsetX, e.offsetY);
         ctx.stroke();
     }
+  });
+
+  //clear signature canvas
+  document.getElementById('clear-canvas').addEventListener('click', () => {
+    const canvas = document.getElementById('signature-canvas');
+    const ctx = canvas.getContext('2d');
+    ctx.clearRect(0, 0, canvas.width, canvas.height );
+  });
+
+
+  //Apply signature
+  const applyBtn = document.getElementById('apply-signature');
+  applyBtn.addEventListener('click', ()=> {
+    applyBtn.disabled = true;
+
+    const img = document.getElementById('sig-img');
+    const clearBtn = document.getElementById('clear-canvas');
+    img.src = canvas.toDataURL();
+    img.style.display = 'block';
+    canvas.remove();
+    applyBtn.style.display = 'none';
+    clearBtn.style.display = 'none';
+
+  });
+
 });
-})
 
 //clear signature canvas
-document.getElementById('clear-canvas').addEventListener('click', () => {
+/*document.getElementById('clear-canvas').addEventListener('click', () => {
     const canvas = document.getElementById('signature-canvas');
     const ctx = canvas.getContext('2d');
     ctx.clearRect(0, 0, canvas.width, canvas.height );
@@ -127,14 +151,16 @@ document.getElementById('apply-signature').addEventListener('click', () => {
     const canvas = document.getElementById('signature-canvas');
     const clear = document.getElementById('clear-canvas');
     const apply = document.getElementById('apply-signature')
+    
     const dataUrl = canvas.toDataURL();
     const img = document.getElementById('sig-img');
+    img.src = "";
     img.src = dataUrl;
     img.style.display = "block";
     canvas.style.display = "none";
     clear.style.display = "none";
     apply.style.display = "none";
-});
+});*/
 
 
 
@@ -272,7 +298,7 @@ document.getElementById("portfolio-btn").addEventListener('click', () => {
         
         jsPDF: { unit: "mm", format: "a4", orientation: "portrait"},
         pagebreak: {
-            mode: ['avoid-all', 'css', 'legacy']
+            mode: ['css', 'legacy']
         }
     }).from(element).save();
 }, 1000);

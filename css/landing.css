@@ -68,10 +68,11 @@ header {
 #shortcut button {
     background: #4a90e2;
     color: #f5f5f5;
-    font-family: Georgia, Arial, Helvetica, sans-serif;
+    font-family:  monospace,Georgia, Arial, Helvetica, sans-serif;
+    font-weight: 600;
     border-radius: 8px;
     border-style: none;
-    height: 20px;
+    
 }
 nav{
     font-family: 'Courier New', Courier, monospace,Arial, Helvetica, sans-serif;
@@ -117,8 +118,9 @@ nav{
 
 #main-text {
     font-size: 1.8rem;
-    color: #a52;
-    font-family: cursive;
+    color: #222;
+    text-decoration: #fff;
+    font-family: 'Trebuchet MS', sans-serif;
     text-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
     line-height: 1.4;
 }
@@ -254,14 +256,15 @@ nav ul {
 }
 
 #rock, #paper, #scissors {
-    font-size: 25px;
+    font-size: 15px;
     padding: 12px 22px;
     margin: 15px;
     cursor: pointer;
     border: none;
-    border-radius: 15px;
+    border-radius: 10px;
+    font-family: 'Courier New', Courier, monospace,Arial, Helvetica, sans-serif;
     color: #f5f5f5;
-    background-color: dimgray;
+    background-color: darkslateblue;
 
 }
 
@@ -285,10 +288,9 @@ nav ul {
 
 #intro {
     margin-top: 20px;
-    margin-bottom: 20px;
-    color: whitesmoke;
-    font-family: cursive;
-    font-size: 35px;
+    color: rgb(5, 49, 49);
+    font-family: 'Courier New', Courier, monospace,Arial, Helvetica, sans-serif;
+    font-size: 40px;
 }
 
 #rock:hover, #paper:hover, #scissors:hover {
@@ -307,6 +309,7 @@ footer {
     display: flex;
     justify-content: center;
     align-items: center;
+    max-width: 500px;
     width: 100%;
     gap: 30px;
     padding: 40px 20px;
@@ -323,8 +326,8 @@ footer {
     border: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: 15px;
     padding: 30px;
-    max-width: 500px;
-    width: 100%;
+   /* max-width: 500px;
+    width: 100%;*/
     text-align: center;
     box-shadow: 0 4px 15px rgba(0,0,0,0.5);
     box-sizing: border-box;
@@ -333,7 +336,7 @@ footer {
 .footer-content p {
     line-height: 1.6;
     color: var(--text-color);
-    font-size: 0.95rem;
+    font-size: 1.2rem;
     margin: 10px 0;
 }
 
@@ -342,13 +345,13 @@ footer {
     /* BUG FIX: Remove margin-top from .right class (was conflicting and creating spacing)
        ISSUE: Individual margins on paragraphs broke alignment
        SOLUTION: Use margin on .footer-content p instead for consistent spacing */
-    font-size: 0.8rem;
+    font-size: 1rem;
     opacity: 0.7;
 }
 
 .footer-title {
     color: #a52;
-    font-family: cursive, sans-serif;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif,Cochin, Georgia, Times, 'Times New Roman', serif, sans-serif;
     font-size: 1.8rem;
     margin-top: 0;
     text-align: center;

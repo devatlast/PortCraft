@@ -11,7 +11,6 @@ html{
 
 body {
     background: #f4f4f4;
-    color: #333;
     line-height: 1.6;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS',Arial, Helvetica, sans-serif, sans-serif;
     min-height: 100vh;
@@ -71,8 +70,6 @@ ul {
 }
 
 .section {
-    padding: 25px;
-    margin: auto;
     text-align: left;
     display: block;
     background-color: white;
@@ -83,11 +80,11 @@ ul {
 
 /* Portfolio, portfolio headers*/
 #portfolio h1, h3 {
-    color: whitesmoke;
-    margin-top: 10px;
+    margin-top: 15px;
 }
 #portfolio {
     position: relative;
+    width: auto;
     padding: 10px;
     border-radius: 12px;
     box-shadow: 0 10px 25px rgba(0,0,0,0.3);
@@ -136,7 +133,12 @@ button :hover {background-color: #333;}
     display: block;
 }
 #signature h3 {
-    margin-top: 15px;
+    margin-top: 20px;
+    margin-bottom: 8px;
+}
+#signature {
+    margin-top: 30px;
+    page-break-after: avoid;
 }
 /*Sig ends here*/
 
