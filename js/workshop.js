@@ -220,6 +220,8 @@ if (uploadBtn && profileInput && profileImg) {
 }
 
 
+
+
 // about portcraft buttton to back 
 
 /*const aboutBtn = document.getElementById('about-btn');
@@ -235,9 +237,13 @@ aboutBtn.addEventListener("click", () => {
 });*/
 
 
+
+
 /* =======Buttons to download Invoice and Portfolio=========*/
 
 document.getElementById("invoice-btn").addEventListener('click', () => {
+    const invoiceBtn = document.getElementById('invoice-btn');
+    invoiceBtn.style.display = "none";
     const element = document.getElementById("invoice");
     setTimeout(() => {
     html2pdf().set ({
@@ -253,6 +259,8 @@ document.getElementById("invoice-btn").addEventListener('click', () => {
 
 
 document.getElementById("portfolio-btn").addEventListener('click', () => {
+    const portfolioBtn = document.getElementById('portfolio-btn');
+    portfolioBtn.style.display= "none";
     const element = document.getElementById("portfolio");
     setTimeout(() => {
     html2pdf().set({

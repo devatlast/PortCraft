@@ -43,7 +43,6 @@ header {
     /* FIX: Changed from hardcoded #000 to var(--text-color) to support dark mode */
     color: var(--text-color);
     width: 100%;
-   
     gap: 5px;
     border-bottom: 2px solid rgba(0,0,0,0.1);
     background: rgb(84, 132, 132);
