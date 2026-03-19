@@ -67,10 +67,12 @@ header {
 }
 #shortcut button {
     background: #1e293b;
+    margin: 10px;
     color: #f5f5f5;
-    font-family:  monospace,Georgia, Arial, Helvetica, sans-serif;
+    font-family:  'Courier New', Courier, monospace,Georgia, Arial, Helvetica, sans-serif;
     font-weight: 500;
     border-radius: 8px;
+    width: auto;
     border-style: none;
     
 }
@@ -324,9 +326,6 @@ footer {
     box-sizing: border-box;
 }
 
-/* BUG FIX: Move background styling from individual paragraphs to footer-content container
-   ISSUE: Each <p> had its own background/border, creating misaligned boxes
-   SOLUTION: Apply one unified background to .footer-content, remove individual paragraph backgrounds */
 .footer-content {
     background-color: rgba(255, 255, 255, 0.5);
     border: 1px solid rgba(255, 255, 255, 0.1);
@@ -334,13 +333,13 @@ footer {
     padding: 30px;
    /* max-width: 500px;
     width: 100%;*/
+    width: auto;
     text-align: center;
     box-shadow: 0 4px 15px rgba(0,0,0,0.5);
     box-sizing: border-box;
 }
 
 .footer-content p {
-    line-height: 1.6;
     color: var(--text-color);
     font-size: 1.4rem;
     margin: 10px 0;
@@ -348,9 +347,7 @@ footer {
 
 
 .right {
-    /* BUG FIX: Remove margin-top from .right class (was conflicting and creating spacing)
-       ISSUE: Individual margins on paragraphs broke alignment
-       SOLUTION: Use margin on .footer-content p instead for consistent spacing */
+    margin-top: 20px;
     font-size: 1.4rem;
     opacity: 0.7;
 }
