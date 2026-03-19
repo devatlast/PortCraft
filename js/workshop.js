@@ -70,17 +70,7 @@ function changeTheme(themeOpt) {
 
 }
 
-//logic for theme-selector
-/*const themeSelector = document.getElementById('theme-select');
-themeSelector.addEventListener('change', (e) => {
-    changeTheme(e.target.value);
-    localStorage.setItem('selectedTheme', e.target.value);
-});*/
-//save and load theme
-/*const savedTheme = localStorage.getItem('selectedTheme') || 'default';
-changeTheme(savedTheme);
-themeSelector.value = savedTheme;
-*/
+
 
 
 
@@ -101,7 +91,48 @@ document.addEventListener("DOMContentLoaded", () => {
   ctx.lineWidth = 2;
   ctx.strokeStyle = '#000000';
   let drawing = false;
-  canvas.addEventListener('mousedown', (e) => {
+  function getPosition(e){
+    const rect = canvas.getBoundingClientRect();
+    if (e.touches){
+        return{
+            x: e.touches[0].clientX - rect.left,
+            y: e.touches[0].clientY - rect.top
+        };
+    }else {
+        return{
+            x: e.offsetX,
+            y: e.offsetY
+        };
+    }
+  }
+  function startDrawing(e){
+    drawing = true;
+    const pos = getPosition(e);
+    ctx.beginPath();
+    ctx.moveTo(pos.x, pos.y);
+  }
+
+  function draw(e){
+    if(!drawing) return;
+    const pos = getPosition(e);
+    ctx.lineTo(pos.x, pos.y);
+    ctx.stroke();
+  }
+
+  function stopDrawing() {
+    drawing = false;
+  }
+  //Mouse 
+  canvas.addEventListener('mousedown', startDrawing);
+  canvas.addEventListener('mousemove', draw);
+  canvas.addEventListener('mouseup', stopDrawing );
+  //Touch
+  canvas.addEventListener('touchstart', startDrawing);
+  canvas.addEventListener('touchmove', draw);
+  canvas.addEventListener('touchend', stopDrawing);
+
+  
+  /*canvas.addEventListener('mousedown', (e) => {
     drawing = true;
     ctx.beginPath();
     ctx.moveTo(e.offsetX, e.offsetY)
@@ -113,7 +144,7 @@ document.addEventListener("DOMContentLoaded", () => {
         ctx.lineTo(e.offsetX, e.offsetY);
         ctx.stroke();
     }
-  });
+  });*/
 
   //clear signature canvas
   document.getElementById('clear-canvas').addEventListener('click', () => {
@@ -139,28 +170,6 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
 });
-
-//clear signature canvas
-/*document.getElementById('clear-canvas').addEventListener('click', () => {
-    const canvas = document.getElementById('signature-canvas');
-    const ctx = canvas.getContext('2d');
-    ctx.clearRect(0, 0, canvas.width, canvas.height );
-});
-//apply signature
-document.getElementById('apply-signature').addEventListener('click', () => {
-    const canvas = document.getElementById('signature-canvas');
-    const clear = document.getElementById('clear-canvas');
-    const apply = document.getElementById('apply-signature')
-    
-    const dataUrl = canvas.toDataURL();
-    const img = document.getElementById('sig-img');
-    img.src = "";
-    img.src = dataUrl;
-    img.style.display = "block";
-    canvas.style.display = "none";
-    clear.style.display = "none";
-    apply.style.display = "none";
-});*/
 
 
 
@@ -248,19 +257,7 @@ if (uploadBtn && profileInput && profileImg) {
 
 
 
-// about portcraft buttton to back 
 
-/*const aboutBtn = document.getElementById('about-btn');
-const aboutSection = document.getElementById('about-link');
-const backToHome = document.getElementById('back-to-home');
-const workshopBtn = document.getElementById('back-to-workshop');
-const portfolio = document.getElementById('portfolio');
-
-
-
-aboutBtn.addEventListener("click", () => {
-    window.location.href = "index.html#results"
-});*/
 
 
 
