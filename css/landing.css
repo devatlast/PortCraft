@@ -42,6 +42,7 @@ body {
 header {
     /* FIX: Changed from hardcoded #000 to var(--text-color) to support dark mode */
     color: var(--text-color);
+    max-width: 100%;
     width: 100%;
     gap: 5px;
     border-bottom: 2px solid rgba(0,0,0,0.1);
@@ -68,108 +69,20 @@ header {
     background: #1e293b;
     color: #f5f5f5;
     font-family:  monospace,Georgia, Arial, Helvetica, sans-serif;
-    font-weight: 600;
+    font-weight: 500;
     border-radius: 8px;
     border-style: none;
     
 }
 nav{
     font-family: 'Courier New', Courier, monospace,Arial, Helvetica, sans-serif;
-    font-weight: 600;
+    font-weight: 500;
     text-transform: uppercase;
 }
-/*Header ends here*/
-
-
-
-/*persuasion page*/
-
-#persuasion-section {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 80vh;
-    text-align: center;
-}
-.text-box {
-    max-width: 600px;
-    padding: 40px;
-    box-shadow: 0 20px 50px rgba(0,0,0,0.3);
-    transition: all 0.5s ease;
-    background: rgba(255, 255, 255, 0.5);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 15px;
+#about-link, #back-to-home{
+    color: #f5f5f5;
 }
 
-@keyframes pulse-grow {
-    0% {transform: scale(1); }
-    50% {transform: scale(1.02);}
-    100% {transform: scale(1);}
-}
-.text-box-pulse {
-    animation: pulse-grow 0.4s ease-out;
-}
-
-#main-text {
-    font-size: 1.8rem;
-    color: #222;
-    text-decoration: #fff;
-    font-family: 'Trebuchet MS', sans-serif;
-    text-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
-    line-height: 1.4;
-}
-
-.ctrl-panel {
-    min-height: 60px;
-}
-
-#click-me,#yes-btn,#no-btn{
-    padding: 8px 12px;
-    font-size: 1.1rem;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    border: none;
-    margin: 10px;
-    font-weight: bold;
-}
-
-#click-me {
-    background-color: #1e293b;
-    color: antiquewhite;
-}
-#yes-btn {
-    background-color: #2ecc71;
-    color: whitesmoke;
-    transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-}
-#no-btn {
-    background-color: #e74c3c;
-    color: whitesmoke;
-}
-#click-me:hover, #yes-btn:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
-}
-#choices {
-    display: flex;
-    gap: 20px;
-    justify-content: center;
-}
-#click-me, #choices {
-    margin-top: 30px;
-
-}
-/*End of persuasion
-
-
-
-
-
-/*Rps game*/
 
 .icon {
     justify-content: space-between;
@@ -213,7 +126,9 @@ nav{
 nav ul li {
     margin: 2px 0;
 }
-
+nav li{
+    color: #f5f5f5;
+}
 nav ul {
     list-style-type: none;
     padding: 0;
@@ -226,19 +141,113 @@ nav ul {
 
 .tagline {
     margin: 0;
-    font-size: 0.9rem;
-    font-family: inherit;
+    font-size: 1rem;
+    font-family: monospace,Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     opacity: 0.8;
     color: var(--text-color);
 }
+/*Header ends here*/
 
+
+
+/*persuasion page*/
+
+#persuasion-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 80vh;
+    text-align: center;
+}
+.text-box {
+    max-width: 600px;
+    padding: 40px;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.3);
+    transition: all 0.5s ease;
+    background: #1f3a44;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 2px solid #fff;
+    border-radius: 22px;
+}
+
+@keyframes pulse-grow {
+    0% {transform: scale(1); }
+    50% {transform: scale(1.02);}
+    100% {transform: scale(1);}
+}
+.text-box-pulse {
+    animation: pulse-grow 0.4s ease-out;
+}
+
+#main-text {
+    font-size: 1.8rem;
+    color: #fff;
+    text-decoration: #fff;
+    font-weight: 500;
+    font-family: monospace,'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif,'Trebuchet MS', sans-serif;
+    text-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
+    line-height: 1.4;
+}
+
+.ctrl-panel {
+    min-height: 60px;
+}
+
+#click-me,#yes-btn,#no-btn{
+    padding: 8px 12px;
+    font-size: 1.1rem;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: none;
+    margin: 10px;
+    font-weight: bold;
+}
+
+#click-me {
+    background-color: #1e293b;
+    color: white;
+}
+#yes-btn {
+    background-color: #2ecc71;
+    color: whitesmoke;
+    transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+#no-btn {
+    background-color: #e74c3c;
+    color: whitesmoke;
+}
+#click-me:hover, #yes-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+#choices {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+}
+#click-me, #choices {
+    margin-top: 30px;
+
+}
+/*End of persuasion
+
+
+
+
+
+
+/* ======= Rps and Footer section ======== */
 
 #rps-game {
     margin-top: 25px;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     text-align: center;
+    border: 2px solid #f5f5f5;
     padding: 30px;
-    background-color: #778899;
+    background-color: #1f3a44;
     box-shadow: 0 10px 30px rgba(0,0,0,0.2);
     width: 85%;
     max-width: 100%;
@@ -261,18 +270,18 @@ nav ul {
     border-radius: 10px;
     font-family: 'Courier New', Courier, monospace,Arial, Helvetica, sans-serif;
     color: #f5f5f5;
-    background-color: darkslateblue;
+    background-color: #1e293b;
 
 }
 
-#scoreboard {
-    font-size: 24px;
+#score-board {
+    font-size: 1.4rem;
     margin-top: 20px;
     margin-bottom: 20px;
 }
 
 #round-result {
-    font-size: 24px;
+    font-size: 2rem;
     margin-top: 20px;
     margin-bottom: 20px;
 }
@@ -285,7 +294,7 @@ nav ul {
 
 #intro {
     margin-top: 20px;
-    color: rgb(5, 49, 49);
+    color: #ffffff;
     font-family: 'Courier New', Courier, monospace,Arial, Helvetica, sans-serif;
     font-size: 40px;
 }
@@ -333,7 +342,7 @@ footer {
 .footer-content p {
     line-height: 1.6;
     color: var(--text-color);
-    font-size: 1.2rem;
+    font-size: 1.4rem;
     margin: 10px 0;
 }
 
@@ -342,15 +351,14 @@ footer {
     /* BUG FIX: Remove margin-top from .right class (was conflicting and creating spacing)
        ISSUE: Individual margins on paragraphs broke alignment
        SOLUTION: Use margin on .footer-content p instead for consistent spacing */
-    font-size: 1rem;
+    font-size: 1.4rem;
     opacity: 0.7;
 }
 
 .footer-title {
-    color: #a52;
+    color: #1e293b;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif,Cochin, Georgia, Times, 'Times New Roman', serif, sans-serif;
-    font-size: 1.8rem;
-    margin-top: 0;
+    font-size: 2rem;
     text-align: center;
     width: 100%;
 }
@@ -359,7 +367,7 @@ footer {
     background-color: rgba(255, 255, 255, 0.5);
     border-color: rgba(255, 255, 255, 0.1);
 }
-
+/* ======= Footer and Rps Ends here ======== */
 
 
 

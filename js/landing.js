@@ -55,7 +55,7 @@ if (noBtn) {
       if (mainText) mainText.textContent = "Fine i'll make Yes impossible to miss!";
     }
     if (yesBtn) {
-      const nowScale = 1 + (noCount * 0.1);
+      const nowScale = 1 + (noCount * 0.14);
       yesBtn.style.transform = `scale(${nowScale})`;
       yesBtn.style.transition = 'transform 0.3s ease';
     }
@@ -81,12 +81,14 @@ if (yesBtn) {
     } 
     setTimeout( () =>{
       console.log('Redirecting now!...')
-      window.location.href = 'http://127.0.0.1:5500/workshop.html'
-          window.location,href= 'workshop.html';
+          window.location.href= 'workshop.html';
         }, 100);
   });
 }
 });
+
+
+
 
 /* ==========================
    Dark Mode
