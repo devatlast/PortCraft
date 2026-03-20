@@ -187,7 +187,11 @@ const aiClose = document.getElementById('close-chat');
 const aiLoader = document.getElementById('msg-loader')
 
 
-aiChatBtn.addEventListener('click', () => aiModal.classList.add('open'));
+aiChatBtn.addEventListener('click', () => {
+    alert('Port Ai currently out of service');
+    aiModal.classList.add('open');
+});
+
 console.log('opened');
 
 closeAiModal.addEventListener("click", ()=> aiModal.classList.remove('open'));

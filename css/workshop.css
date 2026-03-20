@@ -29,13 +29,13 @@ body {
 /*Header*/
 header {
     box-shadow: 0 10px 25px solid rgba(0,0,0,0.6);
-    background: linear-gradient(135deg,#1f3a44,#2e5f6b);
+    background: linear-gradient(185deg,#1f3a44,#2e5f6b);
     width: auto;
-    border-radius: 10px;
-    border:2px solid white;
+    border-radius: 12px;
+    border:1.6px solid gold;
     max-width: 100%;
-    margin-top: 5px;
-    margin-bottom: 8px;
+    margin-top: 7px;
+    margin-bottom: 12px;
 }
 h1 {
     font-family: monospace,'Courier New', Courier, monospace,Arial, Helvetica, sans-serif;
@@ -57,6 +57,7 @@ h1 {
     font-family: 'Courier New', Courier, monospace,Arial, Helvetica, sans-serif;
     font-weight: 600;
     border-radius: 10px;
+    border: none;
     width: 80px;
     margin-right: auto;
 }
@@ -117,11 +118,17 @@ button {
     color: #f4f4f4;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     padding: 10px;
-    margin: 10px;
+    margin: 8px;
     cursor: pointer;
-    border-radius: 12px;
+    border-radius: 10px;
 }
-button :hover {background-color: #333;}
+button :hover,header a :hover {
+    background-color: #333;
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    transform: scale(1.05);
+
+}
 
 
 

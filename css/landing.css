@@ -48,7 +48,7 @@ header {
     border-bottom: 2px solid rgba(0,0,0,0.1);
     background: linear-gradient(135deg,#1f3a44,#2e5f6b);
     border-radius: 10px;
-    border: 2px solid white;
+    border: 1.4px solid gold;
    /* box-sizing: border-box;*/
 }
 #nav-container{
@@ -83,6 +83,10 @@ nav{
 }
 #about-link, #back-to-home{
     color: #f5f5f5;
+}
+#shortcut button:hover,#about-link:hover, #back-to-home:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
 }
 
 
@@ -170,7 +174,7 @@ nav ul {
     background: #1f3a44;
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
-    border: 2px solid #fff;
+    border: 1.4px solid gold;
     border-radius: 22px;
 }
 
@@ -247,7 +251,7 @@ nav ul {
     margin-top: 25px;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     text-align: center;
-    border: 2px solid #f5f5f5;
+    border: 1.4px solid gold;
     padding: 30px;
     background-color: #1f3a44;
     box-shadow: 0 10px 30px rgba(0,0,0,0.2);
@@ -275,7 +279,12 @@ nav ul {
     background-color: #1e293b;
 
 }
-
+#rock:hover, #paper:hover,#scissors:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    background-color: #a52;
+    transform: scale(1.05);
+}
 #score-board {
     font-size: 1.4rem;
     margin-top: 20px;
@@ -301,17 +310,8 @@ nav ul {
     font-size: 40px;
 }
 
-#rock:hover, #paper:hover, #scissors:hover {
-    background-color: #a52;
-    transform: scale(1.05);
-}
 
-#right {
-     color: #000;
-     font-weight: 500;   
-     margin-top: 30px;
-     margin-bottom: 10px;
-}
+
 
 footer {
     display: flex;
@@ -333,7 +333,6 @@ footer {
     padding: 30px;
    /* max-width: 500px;
     width: 100%;*/
-    width: auto;
     text-align: center;
     box-shadow: 0 4px 15px rgba(0,0,0,0.5);
     box-sizing: border-box;
@@ -341,21 +340,22 @@ footer {
 
 .footer-content p {
     color: var(--text-color);
-    font-size: 1.4rem;
+    font-size: 1rem;
     margin: 10px 0;
 }
 
 
-.right {
+#right {
     margin-top: 20px;
-    font-size: 1.4rem;
+    font-size: 0.9rem;
+    color: #000;
     opacity: 0.7;
 }
 
 .footer-title {
     color: #1e293b;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif,Cochin, Georgia, Times, 'Times New Roman', serif, sans-serif;
-    font-size: 2rem;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 1.8rem;
     text-align: center;
     width: 100%;
 }
