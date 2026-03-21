@@ -1,2 +1,1 @@
 # PortCraft is a frontend web app that allows users to generate a professional portfolio or invoice and download it as a PDF. Built with vanilla JavaScript, it demonstrates DOM manipulation, dynamic form handling, and client-side file generation.
-
